@@ -1,6 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ca.mcgill.emf.examples.hal
-Bundle-SymbolicName: ca.mcgill.emf.examples.hal; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ca.mcgill.emf.examples.hal;singleton:=true
+Automatic-Module-Name: ca.mcgill.emf.examples.hal
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
