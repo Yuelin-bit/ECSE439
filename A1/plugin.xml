@@ -6,4 +6,12 @@
 
 <plugin>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Gen -->
+      <package
+            uri="http://ca.mcgill/emf/examples/hal"
+            class="hal.HalPackage"
+            genModel="model/Gen.genmodel"/>
+   </extension>
+
 </plugin>
