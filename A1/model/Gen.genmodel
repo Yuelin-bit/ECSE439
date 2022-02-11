@@ -3,7 +3,7 @@
     modelDirectory="/ca.mcgill.emf.examples.hal/src" modelPluginID="ca.mcgill.emf.examples.hal"
     modelName="Gen" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    importOrganizing="true">
   <foreignModel>Hal.ecore</foreignModel>
   <genPackages prefix="Hal" disposableProviderFactory="true" ecorePackage="Hal.ecore#/">
     <genClasses ecoreClass="Hal.ecore#//Device"/>
