@@ -1,30 +1,15 @@
 package ca.mcgill.emf.examples.hal.application;
 
-//import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.Resource;
 
 import ca.mcgill.emf.examples.hal.*;
+import ca.mcgill.emf.examples.hal.util.ResourceHelper;
 import ca.mcgill.emf.examples.hal.view.MainView;
 
 public class HalApplication {
+	
 	private static HalSystem halSystem;
-	
-	
-	/*public static HalSystem getHalSystem() {
-		if(halSystem == null) {
-			halSystem = new HalSystem();
-		}
-		return halSystem;
-	}
-
-	private static HalSystem load() {
-		HalSystem halSystem;
-		try {
-			Resource resource = ResourceHelper.;
-		}catch (RuntimeException e) {
-			
-		}
-		return halSystem;
-	}*/
+	private static String fileName = "data/data.halSystem";
 
 
 
@@ -39,5 +24,37 @@ public class HalApplication {
                 new MainView().setVisible(true);
             }
         });
+	}
+	
+	
+	public static HalSystem getHalSystem() {
+		if(halSystem == null) {
+			halSystem = load();
+		}
+		return halSystem;
+	}
+
+	/**
+	 * Read the halSystem from data file,
+	 * if the file is null, create a new one.
+	 * @return The only halSystem
+	 */
+	private static HalSystem load() {
+		HalSystem halSystem;
+		try {
+			Resource resource = ResourceHelper.INSTANCE.loadResource(fileName);
+			halSystem = (HalSystem) resource.getContents().get(0);
+		}catch (RuntimeException e) {
+			//Otherwise, create an empty halSystem
+			halSystem = HalFactory.eINSTANCE.createHalSystem();
+		}
+		return halSystem;
+	}
+	
+	/**
+	 * Save the halSystem to the file.
+	 */
+	public static void save() {
+		ResourceHelper.INSTANCE.saveResource(halSystem, fileName);
 	}
 }
