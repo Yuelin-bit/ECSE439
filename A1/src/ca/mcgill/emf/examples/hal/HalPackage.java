@@ -233,6 +233,72 @@ public interface HalPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl <em>System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.HalSystemImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getHalSystem()
+	 * @generated
+	 */
+	int HAL_SYSTEM = 5;
+
+	/**
+	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAL_SYSTEM__RULES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Home</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAL_SYSTEM__HOME = 1;
+
+	/**
+	 * The number of structural features of the '<em>System</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAL_SYSTEM_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.RulesImpl <em>Rules</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.RulesImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getRules()
+	 * @generated
+	 */
+	int RULES = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULES__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Rules</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULES_FEATURE_COUNT = 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,6 +424,59 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSensor();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.HalSystem <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>System</em>'.
+	 * @see ca.mcgill.emf.examples.hal.HalSystem
+	 * @generated
+	 */
+	EClass getHalSystem();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.HalSystem#getRules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Rules</em>'.
+	 * @see ca.mcgill.emf.examples.hal.HalSystem#getRules()
+	 * @see #getHalSystem()
+	 * @generated
+	 */
+	EReference getHalSystem_Rules();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.HalSystem#getHome <em>Home</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Home</em>'.
+	 * @see ca.mcgill.emf.examples.hal.HalSystem#getHome()
+	 * @see #getHalSystem()
+	 * @generated
+	 */
+	EReference getHalSystem_Home();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Rules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rules</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules
+	 * @generated
+	 */
+	EClass getRules();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Rules#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules#getName()
+	 * @see #getRules()
+	 * @generated
+	 */
+	EAttribute getRules_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -486,6 +605,50 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SENSOR = eINSTANCE.getSensor();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl <em>System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.HalSystemImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getHalSystem()
+		 * @generated
+		 */
+		EClass HAL_SYSTEM = eINSTANCE.getHalSystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAL_SYSTEM__RULES = eINSTANCE.getHalSystem_Rules();
+
+		/**
+		 * The meta object literal for the '<em><b>Home</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAL_SYSTEM__HOME = eINSTANCE.getHalSystem_Home();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.RulesImpl <em>Rules</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.RulesImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getRules()
+		 * @generated
+		 */
+		EClass RULES = eINSTANCE.getRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RULES__NAME = eINSTANCE.getRules_Name();
 
 	}
 

@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     importOrganizing="true">
   <foreignModel>Hal.ecore</foreignModel>
-  <genPackages prefix="Hal" basePackage="ca.mcgill.emf.examples" disposableProviderFactory="true"
+  <genPackages prefix="Hal" basePackage="ca.mcgill.emf.examples" resource="XMI" disposableProviderFactory="true"
       ecorePackage="Hal.ecore#/">
     <genClasses ecoreClass="Hal.ecore#//Home">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Home/address"/>
@@ -22,5 +22,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Device/name"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Sensor"/>
+    <genClasses ecoreClass="Hal.ecore#//HalSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//HalSystem/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//HalSystem/home"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//Rules">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Rules/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

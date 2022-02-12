@@ -58,6 +58,24 @@ public interface HalFactory extends EFactory {
 	Sensor createSensor();
 
 	/**
+	 * Returns a new object of class '<em>System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>System</em>'.
+	 * @generated
+	 */
+	HalSystem createHalSystem();
+
+	/**
+	 * Returns a new object of class '<em>Rules</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rules</em>'.
+	 * @generated
+	 */
+	Rules createRules();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

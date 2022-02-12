@@ -14,4 +14,11 @@
             genModel="model/Gen.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Gen -->
+      <parser
+            type="hal"
+            class="ca.mcgill.emf.examples.hal.util.HalResourceFactoryImpl"/>
+   </extension>
+
 </plugin>
