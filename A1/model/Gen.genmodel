@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     importOrganizing="true">
   <foreignModel>Hal.ecore</foreignModel>
-  <genPackages prefix="Hal" disposableProviderFactory="true" ecorePackage="Hal.ecore#/">
+  <genPackages prefix="Hal" basePackage="ca.mcgill.emf.examples" disposableProviderFactory="true"
+      ecorePackage="Hal.ecore#/">
     <genClasses ecoreClass="Hal.ecore#//Device"/>
   </genPackages>
 </genmodel:GenModel>
