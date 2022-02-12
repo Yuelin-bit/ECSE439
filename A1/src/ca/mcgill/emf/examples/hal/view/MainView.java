@@ -6,11 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ca.mcgill.emf.examples.hal.controller.HalController;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.Box;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Color;
 
 public class MainView extends JFrame {
 
@@ -18,6 +26,7 @@ public class MainView extends JFrame {
 	private JButton btnShow;
 	private JButton btnDelete;
 	private JButton btnClear;
+	private JTextField roomTextField;
 
 	/**
 	 * Launch the application.
@@ -34,7 +43,11 @@ public class MainView extends JFrame {
 			}
 		});
 	}
-
+	
+	private void refreshUI() {
+		
+	}
+	
 	/**
 	 * Create the frame.
 	 */
@@ -45,26 +58,58 @@ public class MainView extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		btnShow = new JButton("Show");
 		btnShow.setBounds(223, 24, 80, 30);
-		contentPane.add(btnShow);
 		
 		btnDelete = new JButton("Delete");
+		btnDelete.setBounds(315, 24, 80, 30);
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnDelete.setBounds(315, 24, 80, 30);
-		contentPane.add(btnDelete);
 		
 		btnClear = new JButton("Clear");
 		btnClear.setBounds(407, 24, 80, 30);
-		contentPane.add(btnClear);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(61, 24, 150, 30);
+		
+		JLabel lblRoomName = new JLabel("Room Name: ");
+		lblRoomName.setBounds(29, 83, 90, 20);
+		
+		JLabel lblRoom = new JLabel("Room1");
+		lblRoom.setBounds(131, 83, 61, 20);
+		contentPane.setLayout(null);
+		contentPane.add(btnShow);
+		contentPane.add(btnDelete);
+		contentPane.add(btnClear);
 		contentPane.add(comboBox);
+		contentPane.add(lblRoomName);
+		contentPane.add(lblRoom);
+		
+		JLabel line1Label = new JLabel("--------------------------------------------------------------");
+		line1Label.setForeground(Color.LIGHT_GRAY);
+		line1Label.setBounds(6, 55, 498, 16);
+		contentPane.add(line1Label);
+		
+		JLabel lblNewLabel = new JLabel("New Room Name:");
+		lblNewLabel.setBounds(25, 115, 125, 20);
+		contentPane.add(lblNewLabel);
+		
+		roomTextField = new JTextField();
+		roomTextField.setBounds(162, 112, 130, 30);
+		contentPane.add(roomTextField);
+		roomTextField.setColumns(10);
+		
+		JButton btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HalController.addRoom(roomTextField.getText());
+				refreshUI();
+			}
+		});
+		btnAdd.setBounds(293, 112, 80, 30);
+		contentPane.add(btnAdd);
 	}
 }
