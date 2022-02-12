@@ -10,11 +10,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class MainView extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtHalSystem;
+	private JButton btnShow;
+	private JButton btnDelete;
+	private JButton btnClear;
 
 	/**
 	 * Launch the application.
@@ -38,25 +41,30 @@ public class MainView extends JFrame {
 	public MainView() {
 		setTitle("Hal system");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 510, 338);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		txtHalSystem = new JTextField();
-		txtHalSystem.setText("Hal system");
-		txtHalSystem.setBounds(111, 68, 130, 26);
-		contentPane.add(txtHalSystem);
-		txtHalSystem.setColumns(10);
+		btnShow = new JButton("Show");
+		btnShow.setBounds(223, 24, 80, 30);
+		contentPane.add(btnShow);
 		
-		JButton btnTestingButton = new JButton("Testing button");
-		btnTestingButton.addActionListener(new ActionListener() {
+		btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Hello owen");
 			}
 		});
-		btnTestingButton.setBounds(113, 122, 117, 29);
-		contentPane.add(btnTestingButton);
+		btnDelete.setBounds(315, 24, 80, 30);
+		contentPane.add(btnDelete);
+		
+		btnClear = new JButton("Clear");
+		btnClear.setBounds(407, 24, 80, 30);
+		contentPane.add(btnClear);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(61, 24, 150, 30);
+		contentPane.add(comboBox);
 	}
 }
