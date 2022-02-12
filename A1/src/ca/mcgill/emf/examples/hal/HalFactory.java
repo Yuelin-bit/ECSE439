@@ -22,13 +22,40 @@ public interface HalFactory extends EFactory {
 	HalFactory eINSTANCE = ca.mcgill.emf.examples.hal.impl.HalFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Device</em>'.
+	 * Returns a new object of class '<em>Home</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Device</em>'.
+	 * @return a new object of class '<em>Home</em>'.
 	 * @generated
 	 */
-	Device createDevice();
+	Home createHome();
+
+	/**
+	 * Returns a new object of class '<em>Actuator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actuator</em>'.
+	 * @generated
+	 */
+	Actuator createActuator();
+
+	/**
+	 * Returns a new object of class '<em>Room</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room</em>'.
+	 * @generated
+	 */
+	Room createRoom();
+
+	/**
+	 * Returns a new object of class '<em>Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sensor</em>'.
+	 * @generated
+	 */
+	Sensor createSensor();
 
 	/**
 	 * Returns the package supported by this factory.

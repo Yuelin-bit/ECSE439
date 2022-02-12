@@ -68,8 +68,24 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	protected HalSwitch<Adapter> modelSwitch =
 		new HalSwitch<Adapter>() {
 			@Override
+			public Adapter caseHome(Home object) {
+				return createHomeAdapter();
+			}
+			@Override
+			public Adapter caseActuator(Actuator object) {
+				return createActuatorAdapter();
+			}
+			@Override
+			public Adapter caseRoom(Room object) {
+				return createRoomAdapter();
+			}
+			@Override
 			public Adapter caseDevice(Device object) {
 				return createDeviceAdapter();
+			}
+			@Override
+			public Adapter caseSensor(Sensor object) {
+				return createSensorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -92,6 +108,48 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Home
+	 * @generated
+	 */
+	public Adapter createHomeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Actuator <em>Actuator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Actuator
+	 * @generated
+	 */
+	public Adapter createActuatorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Room <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Room
+	 * @generated
+	 */
+	public Adapter createRoomAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Device <em>Device</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -102,6 +160,20 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDeviceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Sensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Sensor
+	 * @generated
+	 */
+	public Adapter createSensorAdapter() {
 		return null;
 	}
 

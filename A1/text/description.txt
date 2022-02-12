@@ -7,4 +7,19 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package hal <http://ca.mcgill/emf/examples/hal>
 
+  Class Home
+    Attribute address : EString
+    Reference contains : Room<<1..*>>
+
+  Class Actuator -> Device
+
+  Class Room
+    Reference device : Device<<0..*>>
+    Attribute name : EString
+    Attribute isWindowOpen : EBoolean
+    Attribute isHeaterOn : EBoolean
+
   Class Device
+    Attribute name : EString
+
+  Class Sensor -> Device

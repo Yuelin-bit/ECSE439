@@ -56,7 +56,10 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case HalPackage.DEVICE: return createDevice();
+			case HalPackage.HOME: return createHome();
+			case HalPackage.ACTUATOR: return createActuator();
+			case HalPackage.ROOM: return createRoom();
+			case HalPackage.SENSOR: return createSensor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -67,9 +70,39 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Device createDevice() {
-		DeviceImpl device = new DeviceImpl();
-		return device;
+	public Home createHome() {
+		HomeImpl home = new HomeImpl();
+		return home;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actuator createActuator() {
+		ActuatorImpl actuator = new ActuatorImpl();
+		return actuator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room createRoom() {
+		RoomImpl room = new RoomImpl();
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sensor createSensor() {
+		SensorImpl sensor = new SensorImpl();
+		return sensor;
 	}
 
 	/**
