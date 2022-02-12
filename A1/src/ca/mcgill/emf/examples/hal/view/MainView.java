@@ -19,6 +19,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Color;
+import javax.swing.JScrollPane;
 
 public class MainView extends JFrame {
 
@@ -76,7 +77,7 @@ public class MainView extends JFrame {
 		comboBox.setBounds(61, 24, 150, 30);
 		
 		JLabel lblRoomName = new JLabel("Room Name: ");
-		lblRoomName.setBounds(29, 83, 90, 20);
+		lblRoomName.setBounds(16, 83, 90, 20);
 		
 		JLabel lblRoom = new JLabel("Room1");
 		lblRoom.setBounds(131, 83, 61, 20);
@@ -94,7 +95,7 @@ public class MainView extends JFrame {
 		contentPane.add(line1Label);
 		
 		JLabel lblNewLabel = new JLabel("New Room Name:");
-		lblNewLabel.setBounds(25, 115, 125, 20);
+		lblNewLabel.setBounds(16, 115, 125, 20);
 		contentPane.add(lblNewLabel);
 		
 		roomTextField = new JTextField();
@@ -111,5 +112,13 @@ public class MainView extends JFrame {
 		});
 		btnAdd.setBounds(293, 112, 80, 30);
 		contentPane.add(btnAdd);
+		
+		JLabel lblNewLabel_1 = new JLabel("Table below");
+		lblNewLabel_1.setBounds(16, 147, 428, 16);
+		contentPane.add(lblNewLabel_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(16, 175, 471, 105);
+		contentPane.add(scrollPane);
 	}
 }
