@@ -75,13 +75,13 @@ public interface HalPackage extends EPackage {
 	int HOME__ADDRESS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Contains</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Rooms</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOME__CONTAINS = 1;
+	int HOME__ROOMS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Home</em>' class.
@@ -252,7 +252,7 @@ public interface HalPackage extends EPackage {
 	int HAL_SYSTEM__RULES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Home</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Home</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -320,15 +320,15 @@ public interface HalPackage extends EPackage {
 	EAttribute getHome_Address();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.Home#getContains <em>Contains</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.Home#getRooms <em>Rooms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contains</em>'.
-	 * @see ca.mcgill.emf.examples.hal.Home#getContains()
+	 * @return the meta object for the containment reference list '<em>Rooms</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Home#getRooms()
 	 * @see #getHome()
 	 * @generated
 	 */
-	EReference getHome_Contains();
+	EReference getHome_Rooms();
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Actuator <em>Actuator</em>}'.
@@ -447,10 +447,10 @@ public interface HalPackage extends EPackage {
 	EReference getHalSystem_Rules();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.HalSystem#getHome <em>Home</em>}'.
+	 * Returns the meta object for the containment reference '{@link ca.mcgill.emf.examples.hal.HalSystem#getHome <em>Home</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Home</em>'.
+	 * @return the meta object for the containment reference '<em>Home</em>'.
 	 * @see ca.mcgill.emf.examples.hal.HalSystem#getHome()
 	 * @see #getHalSystem()
 	 * @generated
@@ -519,12 +519,12 @@ public interface HalPackage extends EPackage {
 		EAttribute HOME__ADDRESS = eINSTANCE.getHome_Address();
 
 		/**
-		 * The meta object literal for the '<em><b>Contains</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Rooms</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HOME__CONTAINS = eINSTANCE.getHome_Contains();
+		EReference HOME__ROOMS = eINSTANCE.getHome_Rooms();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.ActuatorImpl <em>Actuator</em>}' class.
@@ -625,7 +625,7 @@ public interface HalPackage extends EPackage {
 		EReference HAL_SYSTEM__RULES = eINSTANCE.getHalSystem_Rules();
 
 		/**
-		 * The meta object literal for the '<em><b>Home</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Home</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

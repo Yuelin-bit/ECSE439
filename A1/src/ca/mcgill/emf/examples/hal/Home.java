@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.Home#getAddress <em>Address</em>}</li>
- *   <li>{@link ca.mcgill.emf.examples.hal.Home#getContains <em>Contains</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.Home#getRooms <em>Rooms</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getHome()
@@ -47,15 +47,15 @@ public interface Home extends EObject {
 	void setAddress(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contains</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rooms</b></em>' containment reference list.
 	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.Room}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contains</em>' containment reference list.
-	 * @see ca.mcgill.emf.examples.hal.HalPackage#getHome_Contains()
+	 * @return the value of the '<em>Rooms</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getHome_Rooms()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Room> getContains();
+	EList<Room> getRooms();
 
 } // Home

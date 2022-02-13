@@ -18,5 +18,7 @@ public interface HomeValidator {
 	boolean validate();
 
 	boolean validateAddress(String value);
+	boolean validateRooms(EList<Room> value);
+
 	boolean validateContains(EList<Room> value);
 }

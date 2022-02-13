@@ -3,8 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hal" nsURI="http://ca.mcgill/emf/examples/hal" nsPrefix="hal">
   <eClassifiers xsi:type="ecore:EClass" name="Home">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" lowerBound="1"
-        upperBound="-1" eType="#//Room" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" lowerBound="1" upperBound="-1"
+        eType="#//Room" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Device"/>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
@@ -21,8 +21,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="HalSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rules" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="home" upperBound="-1" eType="#//Home"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="home" eType="#//Home" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rules">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

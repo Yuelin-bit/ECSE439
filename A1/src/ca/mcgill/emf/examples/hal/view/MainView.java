@@ -28,6 +28,7 @@ public class MainView extends JFrame {
 	private JButton btnDelete;
 	private JButton btnClear;
 	private JTextField roomTextField;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -55,7 +56,7 @@ public class MainView extends JFrame {
 	public MainView() {
 		setTitle("Hal system");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 510, 338);
+		setBounds(100, 100, 510, 353);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -120,5 +121,22 @@ public class MainView extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(16, 175, 471, 105);
 		contentPane.add(scrollPane);
+		
+		textField = new JTextField();
+		textField.setBounds(116, 287, 198, 26);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnAdd_1 = new JButton("Add");
+		btnAdd_1.setBounds(342, 287, 117, 29);
+		contentPane.add(btnAdd_1);
+		
+		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setBounds(367, 112, 117, 29);
+		contentPane.add(btnUpdate);
+		
+		JLabel lblDeviceName = new JLabel("Device name:");
+		lblDeviceName.setBounds(16, 292, 102, 16);
+		contentPane.add(lblDeviceName);
 	}
 }

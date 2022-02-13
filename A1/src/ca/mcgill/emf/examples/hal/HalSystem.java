@@ -37,15 +37,25 @@ public interface HalSystem extends EObject {
 	EList<Rules> getRules();
 
 	/**
-	 * Returns the value of the '<em><b>Home</b></em>' containment reference list.
-	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.Home}.
+	 * Returns the value of the '<em><b>Home</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Home</em>' containment reference list.
+	 * @return the value of the '<em>Home</em>' containment reference.
+	 * @see #setHome(Home)
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getHalSystem_Home()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Home> getHome();
+	Home getHome();
+
+	/**
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.HalSystem#getHome <em>Home</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Home</em>' containment reference.
+	 * @see #getHome()
+	 * @generated
+	 */
+	void setHome(Home value);
 
 } // HalSystem

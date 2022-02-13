@@ -159,7 +159,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHome_Contains() {
+	public EReference getHome_Rooms() {
 		return (EReference)homeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -319,7 +319,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		// Create classes and their features
 		homeEClass = createEClass(HOME);
 		createEAttribute(homeEClass, HOME__ADDRESS);
-		createEReference(homeEClass, HOME__CONTAINS);
+		createEReference(homeEClass, HOME__ROOMS);
 
 		actuatorEClass = createEClass(ACTUATOR);
 
@@ -376,7 +376,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(homeEClass, Home.class, "Home", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHome_Address(), ecorePackage.getEString(), "address", null, 0, 1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHome_Contains(), this.getRoom(), null, "contains", null, 1, -1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHome_Rooms(), this.getRoom(), null, "rooms", null, 1, -1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -393,7 +393,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		initEClass(halSystemEClass, HalSystem.class, "HalSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHalSystem_Rules(), this.getRules(), null, "rules", null, 0, -1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHalSystem_Home(), this.getHome(), null, "home", null, 0, -1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHalSystem_Home(), this.getHome(), null, "home", null, 0, 1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRules_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

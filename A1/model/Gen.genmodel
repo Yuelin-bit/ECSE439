@@ -9,7 +9,7 @@
       ecorePackage="Hal.ecore#/">
     <genClasses ecoreClass="Hal.ecore#//Home">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Home/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Home/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Home/rooms"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Actuator"/>
     <genClasses ecoreClass="Hal.ecore#//Room">

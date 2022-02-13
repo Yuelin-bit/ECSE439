@@ -9,6 +9,7 @@ import ca.mcgill.emf.examples.hal.Rules;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -47,14 +49,14 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 	protected EList<Rules> rules;
 
 	/**
-	 * The cached value of the '{@link #getHome() <em>Home</em>}' containment reference list.
+	 * The cached value of the '{@link #getHome() <em>Home</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getHome()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Home> home;
+	protected Home home;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +94,42 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Home> getHome() {
-		if (home == null) {
-			home = new EObjectContainmentEList<Home>(Home.class, this, HalPackage.HAL_SYSTEM__HOME);
-		}
+	public Home getHome() {
 		return home;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetHome(Home newHome, NotificationChain msgs) {
+		Home oldHome = home;
+		home = newHome;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, HalPackage.HAL_SYSTEM__HOME, oldHome, newHome);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHome(Home newHome) {
+		if (newHome != home) {
+			NotificationChain msgs = null;
+			if (home != null)
+				msgs = ((InternalEObject)home).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - HalPackage.HAL_SYSTEM__HOME, null, msgs);
+			if (newHome != null)
+				msgs = ((InternalEObject)newHome).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - HalPackage.HAL_SYSTEM__HOME, null, msgs);
+			msgs = basicSetHome(newHome, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.HAL_SYSTEM__HOME, newHome, newHome));
 	}
 
 	/**
@@ -110,7 +143,7 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 			case HalPackage.HAL_SYSTEM__RULES:
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
 			case HalPackage.HAL_SYSTEM__HOME:
-				return ((InternalEList<?>)getHome()).basicRemove(otherEnd, msgs);
+				return basicSetHome(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,8 +178,7 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 				getRules().addAll((Collection<? extends Rules>)newValue);
 				return;
 			case HalPackage.HAL_SYSTEM__HOME:
-				getHome().clear();
-				getHome().addAll((Collection<? extends Home>)newValue);
+				setHome((Home)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,7 +196,7 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 				getRules().clear();
 				return;
 			case HalPackage.HAL_SYSTEM__HOME:
-				getHome().clear();
+				setHome((Home)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -181,7 +213,7 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 			case HalPackage.HAL_SYSTEM__RULES:
 				return rules != null && !rules.isEmpty();
 			case HalPackage.HAL_SYSTEM__HOME:
-				return home != null && !home.isEmpty();
+				return home != null;
 		}
 		return super.eIsSet(featureID);
 	}

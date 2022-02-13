@@ -9,7 +9,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
 
   Class Home
     Attribute address : EString
-    Reference contains : Room<<1..*>>
+    Reference rooms : Room<<1..*>>
 
   Class Actuator -> Device
 
@@ -26,7 +26,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
 
   Class HalSystem
     Reference rules : Rules<<0..*>>
-    Reference home : Home<<0..*>>
+    Reference home : Home
 
   Class Rules
     Attribute name : EString

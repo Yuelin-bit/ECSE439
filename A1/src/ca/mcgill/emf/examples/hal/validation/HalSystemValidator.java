@@ -19,5 +19,7 @@ public interface HalSystemValidator {
 	boolean validate();
 
 	boolean validateRules(EList<Rules> value);
+	boolean validateHome(Home value);
+
 	boolean validateHome(EList<Home> value);
 }
