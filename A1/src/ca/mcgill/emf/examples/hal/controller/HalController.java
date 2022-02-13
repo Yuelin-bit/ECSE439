@@ -30,6 +30,15 @@ public class HalController {
 		return result;
 	}
 	
+	public static void deleteRoom(String name) {
+		Room r = findRoom(name);
+		if (r != null) {
+			HalSystem halSystem = HalApplication.getHalSystem();
+			Home home = halSystem.getHome();
+			home.getRooms().remove(r);
+		}
+	}
+	
 	private static Room findRoom(String name) {
 		HalSystem halSystem = HalApplication.getHalSystem();
 		Home home = halSystem.getHome();

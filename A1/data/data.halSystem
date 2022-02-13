@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <hal:HalSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hal="http://ca.mcgill/emf/examples/hal">
   <home>
-    <rooms name="www"/>
-    <rooms name="qqq"/>
+    <rooms name="122"/>
+    <rooms name="123"/>
+    <rooms name="124"/>
   </home>
 </hal:HalSystem>

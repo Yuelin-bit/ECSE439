@@ -20,6 +20,8 @@ import javax.swing.Box;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import javax.swing.JScrollPane;
 
@@ -84,6 +86,7 @@ public class MainView extends JFrame {
 		btnShow = new JButton("Show");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				refreshUI();
 			}
 		});
 		btnShow.setBounds(223, 24, 80, 30);
@@ -92,6 +95,15 @@ public class MainView extends JFrame {
 		btnDelete.setBounds(315, 24, 80, 30);
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(roomList.getSelectedIndex() != -1) {
+					String roomName = (String) roomList.getSelectedItem();
+					int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete room " + roomName + "?", 
+			        		"Confirm Deletion",	JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+					if (choice == 0) { 
+						HalController.deleteRoom(roomName);
+						refreshUI();
+					}
+				}
 			}
 		});
 		
