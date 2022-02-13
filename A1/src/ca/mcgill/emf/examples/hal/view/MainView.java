@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.controller.HalController;
+import ca.mcgill.emf.examples.hal.dto.TORoom;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -29,6 +31,7 @@ public class MainView extends JFrame {
 	private JButton btnClear;
 	private JTextField roomTextField;
 	private JTextField textField;
+	private JComboBox<String> roomList;
 
 	/**
 	 * Launch the application.
@@ -47,7 +50,12 @@ public class MainView extends JFrame {
 	}
 	
 	private void refreshUI() {
-		
+		String currentRoomName = roomTextField.getText();
+		TORoom toRoom = null;
+		if(currentRoomName != null) {
+			toRoom = HalController.getRoom(currentRoomName);
+		}
+		roomList.removeAllItems();
 	}
 	
 	/**
@@ -74,8 +82,8 @@ public class MainView extends JFrame {
 		btnClear = new JButton("Clear");
 		btnClear.setBounds(407, 24, 80, 30);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(61, 24, 150, 30);
+		roomList = new JComboBox();
+		roomList.setBounds(61, 24, 150, 30);
 		
 		JLabel lblRoomName = new JLabel("Room Name: ");
 		lblRoomName.setBounds(16, 83, 90, 20);
@@ -86,7 +94,7 @@ public class MainView extends JFrame {
 		contentPane.add(btnShow);
 		contentPane.add(btnDelete);
 		contentPane.add(btnClear);
-		contentPane.add(comboBox);
+		contentPane.add(roomList);
 		contentPane.add(lblRoomName);
 		contentPane.add(lblRoom);
 		
