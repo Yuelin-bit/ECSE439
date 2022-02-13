@@ -5,6 +5,11 @@ import java.util.List;
 public class TORoom {
 
 	String name;
+	public String getName() {
+		return name;
+	}
+
+
 	List<String> deviceNames;
 	
 	public TORoom() {

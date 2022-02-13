@@ -56,6 +56,18 @@ public class MainView extends JFrame {
 			toRoom = HalController.getRoom(currentRoomName);
 		}
 		roomList.removeAllItems();
+		int index = 0, foundIndex = -1;
+		for(String name : HalController.getRooms()) {
+			roomList.addItem(name);
+			if(name.equals(toRoom == null ? null : toRoom.getName())) {
+				foundIndex = index;
+			}	
+			index ++;	
+		}
+		roomList.setEnabled(index > 0);
+		roomList.setSelectedIndex(foundIndex);
+		btnShow.setEnabled(index > 0);
+		btnDelete.setEnabled(index > 0);
 	}
 	
 	/**
@@ -70,6 +82,10 @@ public class MainView extends JFrame {
 		setContentPane(contentPane);
 		
 		btnShow = new JButton("Show");
+		btnShow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnShow.setBounds(223, 24, 80, 30);
 		
 		btnDelete = new JButton("Delete");

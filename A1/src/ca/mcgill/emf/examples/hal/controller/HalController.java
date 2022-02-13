@@ -41,4 +41,13 @@ public class HalController {
 		return null;
 	}
 	
+	public static List<String> getRooms(){
+		ArrayList<String> result = new ArrayList<String>();
+		HalSystem halSystem = HalApplication.getHalSystem();
+		Home home = halSystem.getHome();
+		for(Room r : home.getRooms()) {
+			result.add(r.getName());
+		}
+		return result;
+	}
 }

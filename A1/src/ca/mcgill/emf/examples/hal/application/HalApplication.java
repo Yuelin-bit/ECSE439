@@ -41,12 +41,16 @@ public class HalApplication {
 	 */
 	private static HalSystem load() {
 		HalSystem halSystem;
+		Home home;
 		try {
 			Resource resource = ResourceHelper.INSTANCE.loadResource(fileName);
 			halSystem = (HalSystem) resource.getContents().get(0);
 		}catch (RuntimeException e) {
 			//Otherwise, create an empty halSystem
 			halSystem = HalFactory.eINSTANCE.createHalSystem();
+			//Also set a empty room
+			home = HalFactory.eINSTANCE.createHome();
+			halSystem.setHome(home);
 		}
 		return halSystem;
 	}
