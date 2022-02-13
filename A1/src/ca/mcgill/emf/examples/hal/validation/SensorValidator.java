@@ -4,6 +4,8 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.SensorType;
+
 
 /**
  * A sample validator interface for {@link ca.mcgill.emf.examples.hal.Sensor}.
@@ -13,5 +15,7 @@ package ca.mcgill.emf.examples.hal.validation;
  */
 public interface SensorValidator {
 	boolean validate();
+
+	boolean validateSensorType(SensorType value);
 
 }

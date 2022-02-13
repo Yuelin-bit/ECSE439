@@ -4,6 +4,7 @@ package ca.mcgill.emf.examples.hal;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -140,13 +141,22 @@ public interface HalPackage extends EPackage {
 	int ACTUATOR__NAME = DEVICE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Actuator Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR__ACTUATOR_TYPE = DEVICE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTUATOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 0;
+	int ACTUATOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.RoomImpl <em>Room</em>}' class.
@@ -223,13 +233,22 @@ public interface HalPackage extends EPackage {
 	int SENSOR__NAME = DEVICE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Sensor Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__SENSOR_TYPE = DEVICE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 0;
+	int SENSOR_FEATURE_COUNT = DEVICE_FEATURE_COUNT + 1;
 
 
 	/**
@@ -299,6 +318,28 @@ public interface HalPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.SensorType
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSensorType()
+	 * @generated
+	 */
+	int SENSOR_TYPE = 7;
+
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorTpye()
+	 * @generated
+	 */
+	int ACTUATOR_TPYE = 8;
+
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,6 +380,17 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getActuator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Actuator#getActuatorType <em>Actuator Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Actuator Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Actuator#getActuatorType()
+	 * @see #getActuator()
+	 * @generated
+	 */
+	EAttribute getActuator_ActuatorType();
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Room <em>Room</em>}'.
@@ -426,6 +478,17 @@ public interface HalPackage extends EPackage {
 	EClass getSensor();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Sensor#getSensorType <em>Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sensor Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Sensor#getSensorType()
+	 * @see #getSensor()
+	 * @generated
+	 */
+	EAttribute getSensor_SensorType();
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.HalSystem <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,6 +540,26 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRules_Name();
+
+	/**
+	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Sensor Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SensorType
+	 * @generated
+	 */
+	EEnum getSensorType();
+
+	/**
+	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Actuator Tpye</em>'.
+	 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
+	 * @generated
+	 */
+	EEnum getActuatorTpye();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -535,6 +618,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTUATOR = eINSTANCE.getActuator();
+
+		/**
+		 * The meta object literal for the '<em><b>Actuator Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTUATOR__ACTUATOR_TYPE = eINSTANCE.getActuator_ActuatorType();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.RoomImpl <em>Room</em>}' class.
@@ -607,6 +698,14 @@ public interface HalPackage extends EPackage {
 		EClass SENSOR = eINSTANCE.getSensor();
 
 		/**
+		 * The meta object literal for the '<em><b>Sensor Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR__SENSOR_TYPE = eINSTANCE.getSensor_SensorType();
+
+		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl <em>System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -649,6 +748,26 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RULES__NAME = eINSTANCE.getRules_Name();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.SensorType
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSensorType()
+		 * @generated
+		 */
+		EEnum SENSOR_TYPE = eINSTANCE.getSensorType();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorTpye()
+		 * @generated
+		 */
+		EEnum ACTUATOR_TPYE = eINSTANCE.getActuatorTpye();
 
 	}
 

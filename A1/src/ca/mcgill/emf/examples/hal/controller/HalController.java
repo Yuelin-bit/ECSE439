@@ -9,7 +9,7 @@ public class HalController {
 		HalSystem halSystem = HalApplication.getHalSystem();
 		Room room = HalFactory.eINSTANCE.createRoom();
 		room.setName(name);
-		halSystem.getHome().getRooms().get(0).setName(name);
+		halSystem.getHome().getRooms().add(room);
 		HalApplication.save();
 	}
 }

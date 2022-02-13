@@ -4,6 +4,8 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.ActuatorTpye;
+
 
 /**
  * A sample validator interface for {@link ca.mcgill.emf.examples.hal.Actuator}.
@@ -13,5 +15,7 @@ package ca.mcgill.emf.examples.hal.validation;
  */
 public interface ActuatorValidator {
 	boolean validate();
+
+	boolean validateActuatorType(ActuatorTpye value);
 
 }

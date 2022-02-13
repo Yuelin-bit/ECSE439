@@ -12,6 +12,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Reference rooms : Room<<1..*>>
 
   Class Actuator -> Device
+    Attribute actuatorType : ActuatorTpye
 
   Class Room
     Reference device : Device<<0..*>>
@@ -23,6 +24,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Attribute name : EString
 
   Class Sensor -> Device
+    Attribute sensorType : SensorType
 
   Class HalSystem
     Reference rules : Rules<<0..*>>
@@ -30,3 +32,13 @@ Package hal <http://ca.mcgill/emf/examples/hal>
 
   Class Rules
     Attribute name : EString
+
+  Enum SensorType
+    Literal TemperatureSensor = 0
+    Literal MovementSensor = 1
+    Literal LightSensor = 2
+
+  Enum ActuatorTpye
+    Literal Heater = 0
+    Literal Lock = 1
+    Literal LightSwitch = 2
