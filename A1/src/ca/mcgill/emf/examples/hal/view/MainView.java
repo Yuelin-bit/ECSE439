@@ -28,6 +28,9 @@ import java.awt.Dimension;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class MainView extends JFrame {
 
@@ -43,8 +46,8 @@ public class MainView extends JFrame {
 	private String error = null;
 	private JLabel lblRoom;
 	private JTextField deviceTextField;
-	private JTable deviceTable;
-	private JScrollPane scrollPane;
+	private JTable sensorTable;
+	private JScrollPane scrollPaneSensor;
 	
 	//table
 	private DefaultTableModel deviceDtm;
@@ -53,6 +56,8 @@ public class MainView extends JFrame {
 	private JButton btnAdd;
 	private JButton btnUpdate;
 	private JButton btnAddDevice;
+	private JTable actuatorTable;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 	
 
 	/**
@@ -119,8 +124,8 @@ public class MainView extends JFrame {
 			btnAddDevice.setEnabled(true);
 			
 		}
-		Dimension d = deviceTable.getPreferredSize();
-		scrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
+		Dimension d = sensorTable.getPreferredSize();
+		scrollPaneSensor.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
 		error = null;
 	}
 	
@@ -130,7 +135,7 @@ public class MainView extends JFrame {
 	public MainView() {
 		setTitle("Hal system");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 510, 353);
+		setBounds(100, 100, 538, 407);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -212,15 +217,15 @@ public class MainView extends JFrame {
 		lblNewLabel_1.setBounds(16, 147, 428, 16);
 		contentPane.add(lblNewLabel_1);
 		
-		scrollPane = new JScrollPane(deviceTable);
-		scrollPane.setBounds(16, 175, 471, 105);
-		contentPane.add(scrollPane);
+		scrollPaneSensor = new JScrollPane(sensorTable);
+		scrollPaneSensor.setBounds(16, 175, 238, 120);
+		contentPane.add(scrollPaneSensor);
 		
-		deviceTable = new JTable();
-		scrollPane.setViewportView(deviceTable);
+		sensorTable = new JTable();
+		scrollPaneSensor.setViewportView(sensorTable);
 		
 		deviceTextField = new JTextField();
-		deviceTextField.setBounds(116, 287, 198, 26);
+		deviceTextField.setBounds(113, 333, 198, 26);
 		contentPane.add(deviceTextField);
 		deviceTextField.setColumns(10);
 		
@@ -231,7 +236,7 @@ public class MainView extends JFrame {
 				refreshUI(roomTextField.getText());
 			}
 		});
-		btnAddDevice.setBounds(342, 287, 117, 29);
+		btnAddDevice.setBounds(315, 333, 117, 29);
 		contentPane.add(btnAddDevice);
 		
 		btnUpdate = new JButton("Update");
@@ -245,19 +250,42 @@ public class MainView extends JFrame {
 		contentPane.add(btnUpdate);
 		
 		JLabel lblDeviceName = new JLabel("Device name:");
-		lblDeviceName.setBounds(16, 292, 102, 16);
+		lblDeviceName.setBounds(16, 338, 102, 16);
 		contentPane.add(lblDeviceName);
 		
 		errorLabel = new JLabel("");
 		errorLabel.setForeground(Color.RED);
 		errorLabel.setBounds(6, 6, 341, 16);
 		contentPane.add(errorLabel);
+		
+		JScrollPane scrollPaneActuator = new JScrollPane();
+		scrollPaneActuator.setBounds(266, 174, 248, 121);
+		contentPane.add(scrollPaneActuator);
+		
+		actuatorTable = new JTable();
+		scrollPaneActuator.setViewportView(actuatorTable);
+		
+		JLabel lblDeviceType = new JLabel("Type:");
+		lblDeviceType.setBounds(16, 310, 61, 16);
+		contentPane.add(lblDeviceType);
+		
+		JRadioButton rdbtnSensor = new JRadioButton("Sensor");
+		buttonGroup.add(rdbtnSensor);
+		rdbtnSensor.setBounds(70, 306, 102, 23);
+		contentPane.add(rdbtnSensor);
+		
+		JRadioButton rdbtnActuator = new JRadioButton("Actuator");
+		buttonGroup.add(rdbtnActuator);
+		rdbtnActuator.setBounds(190, 307, 102, 23);
+		contentPane.add(rdbtnActuator);
+		
+		refreshUI(null);
 	}
 	
 	private void populateDeviceTable(TORoom toRoom) {
 		deviceDtm = new DefaultTableModel(0, 0);
 		deviceDtm.setColumnIdentifiers(deviceColumnNames);
-		deviceTable.setModel(deviceDtm);
+		sensorTable.setModel(deviceDtm);
 		if (toRoom != null) {
 			for (String deviceName : toRoom.getDeviceNames()) {
 				Object[] obj = {deviceName};
