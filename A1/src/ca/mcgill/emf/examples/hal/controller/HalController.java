@@ -22,7 +22,7 @@ public class HalController {
 		return null;
 	}
 	
-	public static String addDevice(String roomName, String deviceName, Boolean isSensor) {
+	public static String addDevice(String roomName, String deviceName, String specificType, Boolean isSensor) {
 
 		if(existsDevice(deviceName)) {
 			return "Device with name " + deviceName + " already exists";
@@ -91,9 +91,11 @@ public class HalController {
 			for(Device device : r.getDevice()) {
 				//System.out.println(device.getClass().getName());
 				if(device.getClass().getName().contains("Sensor")) {
-					deviceList.add(new TODevice(device.getName(), "sensor"));
+					Sensor s = (Sensor) device;
+					deviceList.add(new TODevice(device.getName(), "sensor", s.getSensorType().toString()));
 				}else {
-					deviceList.add(new TODevice(device.getName(), "actuator"));
+					Actuator a = (Actuator) device;
+					deviceList.add(new TODevice(device.getName(), "actuator", a.getActuatorType().toString()));
 				}
 			}
 			result = new TORoom(name, deviceList);

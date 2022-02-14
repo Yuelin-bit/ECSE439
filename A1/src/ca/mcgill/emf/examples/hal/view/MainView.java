@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.controller.HalController;
@@ -65,8 +66,8 @@ public class MainView extends JFrame {
 	private JButton btnRemove;
 	private JRadioButton rdbtnSensor;
 	private JRadioButton rdbtnActuator;
-	private JComboBox sensorCombo;
-	private JComboBox actuatorCombo;
+	private JComboBox<String> sensorCombo;
+	private JComboBox<String> actuatorCombo;
 	
 
 	/**
@@ -241,7 +242,16 @@ public class MainView extends JFrame {
 		btnAddDevice = new JButton("Add on");
 		btnAddDevice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), rdbtnSensor.isSelected());
+				String specificType = null;
+				if(sensorCombo.isEnabled()) {
+					specificType = (String)sensorCombo.getSelectedItem();
+				} else if (actuatorCombo.isEnabled()) {
+					specificType = (String)actuatorCombo.getSelectedItem();
+				}
+				if(specificType.equals("") || specificType == null) return;
+				//System.out.println("specificType is " + specificType);
+				//System.out.println("isSensorSelect " + rdbtnSensor.isSelected());
+				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), specificType, rdbtnSensor.isSelected());
 				refreshUI(roomTextField.getText());
 			}
 		});
@@ -328,19 +338,32 @@ public class MainView extends JFrame {
 		actuatorCombo.setBounds(351, 307, 163, 27);
 		contentPane.add(actuatorCombo);
 		
+		sensorCombo.addItem("Temperature Sensor");
+		sensorCombo.addItem("Movement Sensor");
+		sensorCombo.addItem("Light Sensor");
+		
+		actuatorCombo.addItem("Heater");
+		actuatorCombo.addItem("Lock");
+		actuatorCombo.addItem("Light Switch");
+		
 		refreshUI(null);
 	}
 	
 	private void populateDeviceTable(TORoom toRoom) {
+
 		sensorDtm = new DefaultTableModel(0, 0);
 		sensorDtm.setColumnIdentifiers(sensorColumnNames);
+		sensorDtm.addColumn("type");
 		sensorTable.setModel(sensorDtm);
+		
 		actuatorDtm = new DefaultTableModel(0, 0);
 		actuatorDtm.setColumnIdentifiers(actuatorColumnNames);
+		actuatorDtm.addColumn("type");
 		actuatorTable.setModel(actuatorDtm);
+		
 		if (toRoom != null) {
 			for (TODevice device : toRoom.getDeviceList()) {
-				Object[] obj = {device.getName()};
+				Object[] obj = {device.getName(), device.getSpecificType()};
 				if(device.getType().equals("sensor") || device.getType().equals("Sensor")) {
 					sensorDtm.addRow(obj);
 				} else {
