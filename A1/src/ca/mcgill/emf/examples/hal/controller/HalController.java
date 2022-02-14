@@ -21,6 +21,22 @@ public class HalController {
 		return null;
 	}
 	
+	public static String updateRoom(String oldName, String newName) {
+		if (!existsRoom(oldName)) {
+			return "Room with name " + oldName + " does not exist";
+		}
+		if(existsRoom(newName)) {
+			return "Room with name " + newName + " already exists";
+		}
+		if(oldName.equals(newName)) {
+			return null;
+		}
+		Room room = findRoom(oldName);
+		room.setName(newName);
+		HalApplication.save();
+		return null;
+	}
+	
 	public static String addDevice(String roomName, String deviceName, String type) {
 
 		if(existsDevice(deviceName)) {
@@ -102,6 +118,8 @@ public class HalController {
 		}
 		return result;
 	}
+
+
 
 
 }

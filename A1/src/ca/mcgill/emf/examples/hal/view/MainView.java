@@ -235,6 +235,12 @@ public class MainView extends JFrame {
 		contentPane.add(btnAddDevice);
 		
 		btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				error = HalController.updateRoom(lblRoom.getText(), roomTextField.getText());
+				refreshUI(roomTextField.getText());
+			}
+		});
 		btnUpdate.setBounds(367, 112, 117, 29);
 		contentPane.add(btnUpdate);
 		
