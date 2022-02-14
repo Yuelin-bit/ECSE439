@@ -10,14 +10,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,25 +29,15 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ca.mcgill.emf.examples.hal.impl.RoomImpl#getDevice <em>Device</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.RoomImpl#getName <em>Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.RoomImpl#isIsWindowOpen <em>Is Window Open</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.RoomImpl#isIsHeaterOn <em>Is Heater On</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.RoomImpl#getDevice <em>Device</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
-	/**
-	 * The cached value of the '{@link #getDevice() <em>Device</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDevice()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Device> device;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -107,6 +99,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected boolean isHeaterOn = IS_HEATER_ON_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getDevice() <em>Device</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Device> device;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,9 +134,38 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 */
 	public EList<Device> getDevice() {
 		if (device == null) {
-			device = new EObjectResolvingEList<Device>(Device.class, this, HalPackage.ROOM__DEVICE);
+			device = new EObjectWithInverseResolvingEList<Device>(Device.class, this, HalPackage.ROOM__DEVICE, HalPackage.DEVICE__ROOM);
 		}
 		return device;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HalPackage.ROOM__DEVICE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDevice()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HalPackage.ROOM__DEVICE:
+				return ((InternalEList<?>)getDevice()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -208,14 +239,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case HalPackage.ROOM__DEVICE:
-				return getDevice();
 			case HalPackage.ROOM__NAME:
 				return getName();
 			case HalPackage.ROOM__IS_WINDOW_OPEN:
 				return isIsWindowOpen();
 			case HalPackage.ROOM__IS_HEATER_ON:
 				return isIsHeaterOn();
+			case HalPackage.ROOM__DEVICE:
+				return getDevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,10 +260,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case HalPackage.ROOM__DEVICE:
-				getDevice().clear();
-				getDevice().addAll((Collection<? extends Device>)newValue);
-				return;
 			case HalPackage.ROOM__NAME:
 				setName((String)newValue);
 				return;
@@ -241,6 +268,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HalPackage.ROOM__IS_HEATER_ON:
 				setIsHeaterOn((Boolean)newValue);
+				return;
+			case HalPackage.ROOM__DEVICE:
+				getDevice().clear();
+				getDevice().addAll((Collection<? extends Device>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,9 +285,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case HalPackage.ROOM__DEVICE:
-				getDevice().clear();
-				return;
 			case HalPackage.ROOM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -265,6 +293,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case HalPackage.ROOM__IS_HEATER_ON:
 				setIsHeaterOn(IS_HEATER_ON_EDEFAULT);
+				return;
+			case HalPackage.ROOM__DEVICE:
+				getDevice().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -278,14 +309,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case HalPackage.ROOM__DEVICE:
-				return device != null && !device.isEmpty();
 			case HalPackage.ROOM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case HalPackage.ROOM__IS_WINDOW_OPEN:
 				return isWindowOpen != IS_WINDOW_OPEN_EDEFAULT;
 			case HalPackage.ROOM__IS_HEATER_ON:
 				return isHeaterOn != IS_HEATER_ON_EDEFAULT;
+			case HalPackage.ROOM__DEVICE:
+				return device != null && !device.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

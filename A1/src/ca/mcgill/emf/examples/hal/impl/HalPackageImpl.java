@@ -213,7 +213,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	public EReference getRoom_Device() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(0);
+		return (EReference)roomEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -222,7 +222,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	public EAttribute getRoom_Name() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -231,7 +231,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	public EAttribute getRoom_IsWindowOpen() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	public EAttribute getRoom_IsHeaterOn() {
-		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -259,6 +259,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EAttribute getDevice_Name() {
 		return (EAttribute)deviceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDevice_Room() {
+		return (EReference)deviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -387,13 +396,14 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		createEAttribute(actuatorEClass, ACTUATOR__ACTUATOR_TYPE);
 
 		roomEClass = createEClass(ROOM);
-		createEReference(roomEClass, ROOM__DEVICE);
 		createEAttribute(roomEClass, ROOM__NAME);
 		createEAttribute(roomEClass, ROOM__IS_WINDOW_OPEN);
 		createEAttribute(roomEClass, ROOM__IS_HEATER_ON);
+		createEReference(roomEClass, ROOM__DEVICE);
 
 		deviceEClass = createEClass(DEVICE);
 		createEAttribute(deviceEClass, DEVICE__NAME);
+		createEReference(deviceEClass, DEVICE__ROOM);
 
 		sensorEClass = createEClass(SENSOR);
 		createEAttribute(sensorEClass, SENSOR__SENSOR_TYPE);
@@ -451,13 +461,14 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getActuator_ActuatorType(), this.getActuatorTpye(), "actuatorType", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoom_Device(), this.getDevice(), null, "device", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_Name(), ecorePackage.getEString(), "name", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_IsWindowOpen(), ecorePackage.getEBoolean(), "isWindowOpen", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoom_IsHeaterOn(), ecorePackage.getEBoolean(), "isHeaterOn", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoom_Device(), this.getDevice(), this.getDevice_Room(), "device", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDevice_Room(), this.getRoom(), this.getRoom_Device(), "room", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensor_SensorType(), this.getSensorType(), "sensorType", null, 0, 1, Sensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

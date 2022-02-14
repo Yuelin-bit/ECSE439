@@ -15,13 +15,14 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Attribute actuatorType : ActuatorTpye
 
   Class Room
-    Reference device : Device<<0..*>>
     Attribute name : EString
     Attribute isWindowOpen : EBoolean
     Attribute isHeaterOn : EBoolean
+    Reference device : Device<<0..*>>
 
   Class Device
     Attribute name : EString
+    Reference room : Room
 
   Class Sensor -> Device
     Attribute sensorType : SensorType

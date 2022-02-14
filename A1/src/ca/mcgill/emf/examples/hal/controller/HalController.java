@@ -46,7 +46,10 @@ public class HalController {
 	public static String removeDevice(String deviceName) {
 		Device d = findDevice(deviceName);
 		if(d != null) {
-			
+			d.setRoom(null);
+			HalSystem halSystem = HalApplication.getHalSystem();
+			halSystem.getDevice().remove(d);
+			HalApplication.save();
 		}
 		return null;
 	}

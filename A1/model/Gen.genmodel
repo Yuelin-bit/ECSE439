@@ -25,13 +25,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Actuator/actuatorType"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Room">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Room/device"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Room/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Room/isWindowOpen"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Room/isHeaterOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Room/device"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Device">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Device/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Device/room"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Sensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Sensor/sensorType"/>

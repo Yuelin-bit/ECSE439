@@ -113,13 +113,22 @@ public interface HalPackage extends EPackage {
 	int DEVICE__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE__ROOM = 1;
+
+	/**
 	 * The number of structural features of the '<em>Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_FEATURE_COUNT = 1;
+	int DEVICE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.ActuatorImpl <em>Actuator</em>}' class.
@@ -139,6 +148,15 @@ public interface HalPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTUATOR__NAME = DEVICE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTUATOR__ROOM = DEVICE__ROOM;
 
 	/**
 	 * The feature id for the '<em><b>Actuator Type</b></em>' attribute.
@@ -169,22 +187,13 @@ public interface HalPackage extends EPackage {
 	int ROOM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Device</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__DEVICE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__NAME = 1;
+	int ROOM__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Window Open</b></em>' attribute.
@@ -193,7 +202,7 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__IS_WINDOW_OPEN = 2;
+	int ROOM__IS_WINDOW_OPEN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Heater On</b></em>' attribute.
@@ -202,7 +211,16 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__IS_HEATER_ON = 3;
+	int ROOM__IS_HEATER_ON = 2;
+
+	/**
+	 * The feature id for the '<em><b>Device</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__DEVICE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -231,6 +249,15 @@ public interface HalPackage extends EPackage {
 	 * @ordered
 	 */
 	int SENSOR__NAME = DEVICE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__ROOM = DEVICE__ROOM;
 
 	/**
 	 * The feature id for the '<em><b>Sensor Type</b></em>' attribute.
@@ -477,6 +504,17 @@ public interface HalPackage extends EPackage {
 	EAttribute getDevice_Name();
 
 	/**
+	 * Returns the meta object for the reference '{@link ca.mcgill.emf.examples.hal.Device#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Device#getRoom()
+	 * @see #getDevice()
+	 * @generated
+	 */
+	EReference getDevice_Room();
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Sensor <em>Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -706,6 +744,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEVICE__NAME = eINSTANCE.getDevice_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEVICE__ROOM = eINSTANCE.getDevice_Room();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.SensorImpl <em>Sensor</em>}' class.

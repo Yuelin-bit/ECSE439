@@ -4,6 +4,8 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.Room;
+
 
 /**
  * A sample validator interface for {@link ca.mcgill.emf.examples.hal.Device}.
@@ -15,4 +17,6 @@ public interface DeviceValidator {
 	boolean validate();
 
 	boolean validateName(String value);
+
+	boolean validateRoom(Room value);
 }

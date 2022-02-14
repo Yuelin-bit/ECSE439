@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.Device#getName <em>Name</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.Device#getRoom <em>Room</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getDevice()
@@ -42,5 +43,29 @@ public interface Device extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Room</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Room#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room</em>' reference.
+	 * @see #setRoom(Room)
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getDevice_Room()
+	 * @see ca.mcgill.emf.examples.hal.Room#getDevice
+	 * @model opposite="device"
+	 * @generated
+	 */
+	Room getRoom();
+
+	/**
+	 * Sets the value of the '{@link ca.mcgill.emf.examples.hal.Device#getRoom <em>Room</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Room</em>' reference.
+	 * @see #getRoom()
+	 * @generated
+	 */
+	void setRoom(Room value);
 
 } // Device

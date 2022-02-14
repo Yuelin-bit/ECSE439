@@ -15,10 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ca.mcgill.emf.examples.hal.Room#getDevice <em>Device</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Room#getName <em>Name</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Room#isIsWindowOpen <em>Is Window Open</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Room#isIsHeaterOn <em>Is Heater On</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.Room#getDevice <em>Device</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getRoom()
@@ -29,11 +29,13 @@ public interface Room extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Device</b></em>' reference list.
 	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.Device}.
+	 * It is bidirectional and its opposite is '{@link ca.mcgill.emf.examples.hal.Device#getRoom <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Device</em>' reference list.
 	 * @see ca.mcgill.emf.examples.hal.HalPackage#getRoom_Device()
-	 * @model
+	 * @see ca.mcgill.emf.examples.hal.Device#getRoom
+	 * @model opposite="room"
 	 * @generated
 	 */
 	EList<Device> getDevice();
