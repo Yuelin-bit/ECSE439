@@ -288,6 +288,24 @@ public class MainView extends JFrame {
 		contentPane.add(rdbtnActuator);
 		
 		btnRemove = new JButton("Remove");
+		btnRemove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String name = null;
+				if(actuatorTable.getSelectedRow() != -1) {
+					name = (String) actuatorTable.getModel().getValueAt(actuatorTable.getSelectedRow(), 0);
+				} else if(sensorTable.getSelectedRow() != -1) {
+					name = (String) sensorTable.getModel().getValueAt(sensorTable.getSelectedRow(), 0);
+				}
+				if(name == null) return;
+				int choice = JOptionPane.showConfirmDialog(null, "Do you want to delete device " + name + "?", 
+		        		"Confirm Deletion",	JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+				if (choice == 0) { 
+					error = HalController.removeDevice(name);
+					refreshUI(roomTextField.getText());
+				}
+				
+			}
+		});
 		btnRemove.setBounds(421, 333, 93, 29);
 		contentPane.add(btnRemove);
 		

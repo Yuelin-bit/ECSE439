@@ -43,6 +43,14 @@ public class HalController {
 		return null;
 	}
 	
+	public static String removeDevice(String deviceName) {
+		Device d = findDevice(deviceName);
+		if(d != null) {
+			
+		}
+		return null;
+	}
+	
 	// update the name of a room
 	
 	public static String updateRoomName(String oldRoomName, String newRoomName) {
@@ -133,6 +141,8 @@ public class HalController {
 		}
 		return result;
 	}
+
+
 
 
 }
