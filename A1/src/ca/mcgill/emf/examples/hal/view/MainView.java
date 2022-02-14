@@ -34,6 +34,10 @@ public class MainView extends JFrame {
 	private JTextField roomTextField;
 	private JTextField textField;
 	private JComboBox<String> roomList;
+	
+	//error
+	private JLabel errorLabel = new JLabel();
+	private String error = null;
 
 	/**
 	 * Launch the application.
@@ -51,8 +55,9 @@ public class MainView extends JFrame {
 		});
 	}
 	
-	private void refreshUI() {
-		String currentRoomName = roomTextField.getText();
+	private void refreshUI(String roomInput) {
+		errorLabel.setText(error);
+		String currentRoomName = roomInput;
 		TORoom toRoom = null;
 		if(currentRoomName != null) {
 			toRoom = HalController.getRoom(currentRoomName);
@@ -86,7 +91,7 @@ public class MainView extends JFrame {
 		btnShow = new JButton("Show");
 		btnShow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				refreshUI();
+				refreshUI( (String) roomList.getSelectedItem());
 			}
 		});
 		btnShow.setBounds(223, 24, 80, 30);
@@ -101,13 +106,19 @@ public class MainView extends JFrame {
 			        		"Confirm Deletion",	JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 					if (choice == 0) { 
 						HalController.deleteRoom(roomName);
-						refreshUI();
+						refreshUI(null);
 					}
 				}
 			}
 		});
 		
 		btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				error = null;
+				refreshUI(null);
+			}
+		});
 		btnClear.setBounds(407, 24, 80, 30);
 		
 		roomList = new JComboBox();
@@ -143,8 +154,8 @@ public class MainView extends JFrame {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HalController.addRoom(roomTextField.getText());
-				refreshUI();
+				error = HalController.addRoom(roomTextField.getText());
+				refreshUI(roomTextField.getText());
 			}
 		});
 		btnAdd.setBounds(293, 112, 80, 30);
@@ -174,5 +185,10 @@ public class MainView extends JFrame {
 		JLabel lblDeviceName = new JLabel("Device name:");
 		lblDeviceName.setBounds(16, 292, 102, 16);
 		contentPane.add(lblDeviceName);
+		
+		errorLabel = new JLabel("");
+		errorLabel.setForeground(Color.RED);
+		errorLabel.setBounds(6, 6, 341, 16);
+		contentPane.add(errorLabel);
 	}
 }
