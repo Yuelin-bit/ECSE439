@@ -3,7 +3,7 @@
 package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.Actuator;
-import ca.mcgill.emf.examples.hal.ActuatorTpye;
+import ca.mcgill.emf.examples.hal.ActuatorType;
 import ca.mcgill.emf.examples.hal.Device;
 import ca.mcgill.emf.examples.hal.HalFactory;
 import ca.mcgill.emf.examples.hal.HalPackage;
@@ -90,7 +90,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum actuatorTpyeEEnum = null;
+	private EEnum actuatorTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -356,8 +356,8 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getActuatorTpye() {
-		return actuatorTpyeEEnum;
+	public EEnum getActuatorType() {
+		return actuatorTypeEEnum;
 	}
 
 	/**
@@ -418,7 +418,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 
 		// Create enums
 		sensorTypeEEnum = createEEnum(SENSOR_TYPE);
-		actuatorTpyeEEnum = createEEnum(ACTUATOR_TPYE);
+		actuatorTypeEEnum = createEEnum(ACTUATOR_TYPE);
 	}
 
 	/**
@@ -458,7 +458,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEReference(getHome_Rooms(), this.getRoom(), null, "rooms", null, 1, -1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getActuator_ActuatorType(), this.getActuatorTpye(), "actuatorType", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActuator_ActuatorType(), this.getActuatorType(), "actuatorType", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Name(), ecorePackage.getEString(), "name", null, 0, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -487,10 +487,10 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		addEEnumLiteral(sensorTypeEEnum, SensorType.MOVEMENT_SENSOR);
 		addEEnumLiteral(sensorTypeEEnum, SensorType.LIGHT_SENSOR);
 
-		initEEnum(actuatorTpyeEEnum, ActuatorTpye.class, "ActuatorTpye");
-		addEEnumLiteral(actuatorTpyeEEnum, ActuatorTpye.HEATER);
-		addEEnumLiteral(actuatorTpyeEEnum, ActuatorTpye.LOCK);
-		addEEnumLiteral(actuatorTpyeEEnum, ActuatorTpye.LIGHT_SWITCH);
+		initEEnum(actuatorTypeEEnum, ActuatorType.class, "ActuatorType");
+		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.HEATER);
+		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.LOCK);
+		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.LIGHT_SWITCH);
 
 		// Create resource
 		createResource(eNS_URI);

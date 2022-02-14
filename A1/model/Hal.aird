@@ -326,7 +326,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_dl88QIyDEeywkbozU62_tw" name="actuatorType : ActuatorTpye = Heater" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_dl88QIyDEeywkbozU62_tw" name="actuatorType : ActuatorType = Heater" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="Hal.ecore#//Actuator/actuatorType"/>
         <semanticElements xmi:type="ecore:EAttribute" href="Hal.ecore#//Actuator/actuatorType"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_lQ6c24yDEeywkbozU62_tw" labelAlignment="LEFT">
@@ -538,9 +538,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_UKSTEIyDEeywkbozU62_tw" name="ActuatorTpye" tooltipText="" width="12" height="10">
-      <target xmi:type="ecore:EEnum" href="Hal.ecore#//ActuatorTpye"/>
-      <semanticElements xmi:type="ecore:EEnum" href="Hal.ecore#//ActuatorTpye"/>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_UKSTEIyDEeywkbozU62_tw" name="ActuatorType" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="Hal.ecore#//ActuatorType"/>
+      <semanticElements xmi:type="ecore:EEnum" href="Hal.ecore#//ActuatorType"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -549,24 +549,24 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_f32tcIyDEeywkbozU62_tw" name="Heater" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/Heater"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/Heater"/>
+        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/Heater"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/Heater"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_f32tcYyDEeywkbozU62_tw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_mKyEEIyDEeywkbozU62_tw" name="Lock" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/Lock"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/Lock"/>
+        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/Lock"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/Lock"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mKyEEYyDEeywkbozU62_tw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
       <ownedElements xmi:type="diagram:DNodeListElement" uid="_nJPQYIyDEeywkbozU62_tw" name="LightSwitch" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/LightSwitch"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorTpye/LightSwitch"/>
+        <target xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/LightSwitch"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Hal.ecore#//ActuatorType/LightSwitch"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_nJP3cIyDEeywkbozU62_tw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

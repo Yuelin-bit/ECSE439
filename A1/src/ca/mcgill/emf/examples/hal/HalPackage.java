@@ -365,15 +365,14 @@ public interface HalPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}' enum.
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.ActuatorType <em>Actuator Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
-	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorTpye()
+	 * @see ca.mcgill.emf.examples.hal.ActuatorType
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorType()
 	 * @generated
 	 */
-	int ACTUATOR_TPYE = 8;
-
+	int ACTUATOR_TYPE = 8;
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
@@ -610,14 +609,14 @@ public interface HalPackage extends EPackage {
 	EEnum getSensorType();
 
 	/**
-	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}'.
+	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.ActuatorType <em>Actuator Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Actuator Tpye</em>'.
-	 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
+	 * @return the meta object for enum '<em>Actuator Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.ActuatorType
 	 * @generated
 	 */
-	EEnum getActuatorTpye();
+	EEnum getActuatorType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -834,14 +833,14 @@ public interface HalPackage extends EPackage {
 		EEnum SENSOR_TYPE = eINSTANCE.getSensorType();
 
 		/**
-		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.ActuatorTpye <em>Actuator Tpye</em>}' enum.
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.ActuatorType <em>Actuator Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ca.mcgill.emf.examples.hal.ActuatorTpye
-		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorTpye()
+		 * @see ca.mcgill.emf.examples.hal.ActuatorType
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorType()
 		 * @generated
 		 */
-		EEnum ACTUATOR_TPYE = eINSTANCE.getActuatorTpye();
+		EEnum ACTUATOR_TYPE = eINSTANCE.getActuatorType();
 
 	}
 

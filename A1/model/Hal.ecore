@@ -7,7 +7,7 @@
         eType="#//Room" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Device">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actuatorType" eType="#//ActuatorTpye"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actuatorType" eType="#//ActuatorType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Room">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -38,7 +38,7 @@
     <eLiterals name="MovementSensor" value="1"/>
     <eLiterals name="LightSensor" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ActuatorTpye">
+  <eClassifiers xsi:type="ecore:EEnum" name="ActuatorType">
     <eLiterals name="Heater"/>
     <eLiterals name="Lock" value="1"/>
     <eLiterals name="LightSwitch" value="2"/>

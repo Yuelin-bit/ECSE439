@@ -5,6 +5,7 @@
 package ca.mcgill.emf.examples.hal.validation;
 
 import ca.mcgill.emf.examples.hal.ActuatorTpye;
+import ca.mcgill.emf.examples.hal.ActuatorType;
 
 
 /**
@@ -15,6 +16,8 @@ import ca.mcgill.emf.examples.hal.ActuatorTpye;
  */
 public interface ActuatorValidator {
 	boolean validate();
+
+	boolean validateActuatorType(ActuatorType value);
 
 	boolean validateActuatorType(ActuatorTpye value);
 

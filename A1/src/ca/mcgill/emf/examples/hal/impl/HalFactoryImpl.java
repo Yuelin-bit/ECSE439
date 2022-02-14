@@ -78,8 +78,8 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 		switch (eDataType.getClassifierID()) {
 			case HalPackage.SENSOR_TYPE:
 				return createSensorTypeFromString(eDataType, initialValue);
-			case HalPackage.ACTUATOR_TPYE:
-				return createActuatorTpyeFromString(eDataType, initialValue);
+			case HalPackage.ACTUATOR_TYPE:
+				return createActuatorTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,8 +95,8 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 		switch (eDataType.getClassifierID()) {
 			case HalPackage.SENSOR_TYPE:
 				return convertSensorTypeToString(eDataType, instanceValue);
-			case HalPackage.ACTUATOR_TPYE:
-				return convertActuatorTpyeToString(eDataType, instanceValue);
+			case HalPackage.ACTUATOR_TYPE:
+				return convertActuatorTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -187,8 +187,8 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActuatorTpye createActuatorTpyeFromString(EDataType eDataType, String initialValue) {
-		ActuatorTpye result = ActuatorTpye.get(initialValue);
+	public ActuatorType createActuatorTypeFromString(EDataType eDataType, String initialValue) {
+		ActuatorType result = ActuatorType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -198,7 +198,7 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertActuatorTpyeToString(EDataType eDataType, Object instanceValue) {
+	public String convertActuatorTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

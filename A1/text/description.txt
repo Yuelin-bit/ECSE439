@@ -12,7 +12,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Reference rooms : Room<<1..*>>
 
   Class Actuator -> Device
-    Attribute actuatorType : ActuatorTpye
+    Attribute actuatorType : ActuatorType
 
   Class Room
     Attribute name : EString
@@ -40,7 +40,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Literal MovementSensor = 1
     Literal LightSensor = 2
 
-  Enum ActuatorTpye
+  Enum ActuatorType
     Literal Heater = 0
     Literal Lock = 1
     Literal LightSwitch = 2

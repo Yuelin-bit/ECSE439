@@ -3,7 +3,7 @@
 package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.Actuator;
-import ca.mcgill.emf.examples.hal.ActuatorTpye;
+import ca.mcgill.emf.examples.hal.ActuatorType;
 import ca.mcgill.emf.examples.hal.HalPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -32,7 +32,7 @@ public class ActuatorImpl extends DeviceImpl implements Actuator {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ActuatorTpye ACTUATOR_TYPE_EDEFAULT = ActuatorTpye.HEATER;
+	protected static final ActuatorType ACTUATOR_TYPE_EDEFAULT = ActuatorType.HEATER;
 	/**
 	 * The cached value of the '{@link #getActuatorType() <em>Actuator Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class ActuatorImpl extends DeviceImpl implements Actuator {
 	 * @generated
 	 * @ordered
 	 */
-	protected ActuatorTpye actuatorType = ACTUATOR_TYPE_EDEFAULT;
+	protected ActuatorType actuatorType = ACTUATOR_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class ActuatorImpl extends DeviceImpl implements Actuator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActuatorTpye getActuatorType() {
+	public ActuatorType getActuatorType() {
 		return actuatorType;
 	}
 
@@ -76,8 +76,8 @@ public class ActuatorImpl extends DeviceImpl implements Actuator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActuatorType(ActuatorTpye newActuatorType) {
-		ActuatorTpye oldActuatorType = actuatorType;
+	public void setActuatorType(ActuatorType newActuatorType) {
+		ActuatorType oldActuatorType = actuatorType;
 		actuatorType = newActuatorType == null ? ACTUATOR_TYPE_EDEFAULT : newActuatorType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, HalPackage.ACTUATOR__ACTUATOR_TYPE, oldActuatorType, actuatorType));
@@ -106,7 +106,7 @@ public class ActuatorImpl extends DeviceImpl implements Actuator {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case HalPackage.ACTUATOR__ACTUATOR_TYPE:
-				setActuatorType((ActuatorTpye)newValue);
+				setActuatorType((ActuatorType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

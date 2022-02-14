@@ -31,9 +31,15 @@ public class HalController {
 		Device device = null;
 		if(isSensor) {
 			device = HalFactory.eINSTANCE.createSensor();
+			Sensor s = (Sensor) device;
+			System.out.println("specificType in if is " + specificType);
+			s.setSensorType(SensorType.get(specificType.replaceAll(" ", "")));
 		}
 		else {
 			device = HalFactory.eINSTANCE.createActuator();
+			Actuator a = (Actuator) device;
+			System.out.println("specificType in else is " + specificType);
+			a.setActuatorType(ActuatorType.getByName(specificType.replaceAll(" ", "")));
 		}
 		device.setName(deviceName);
 		Room room = findRoom(roomName);

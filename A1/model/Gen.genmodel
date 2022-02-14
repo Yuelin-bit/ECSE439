@@ -12,10 +12,10 @@
       <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//SensorType/MovementSensor"/>
       <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//SensorType/LightSensor"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Hal.ecore#//ActuatorTpye">
-      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorTpye/Heater"/>
-      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorTpye/Lock"/>
-      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorTpye/LightSwitch"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Hal.ecore#//ActuatorType">
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorType/Heater"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorType/Lock"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorType/LightSwitch"/>
     </genEnums>
     <genClasses ecoreClass="Hal.ecore#//Home">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Home/address"/>
