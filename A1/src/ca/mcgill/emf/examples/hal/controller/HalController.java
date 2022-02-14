@@ -21,13 +21,26 @@ public class HalController {
 		return null;
 	}
 	
-	public static String addDevice(String roomName, String deviceName) {
+	public static String addDevice(String roomName, String deviceName, String type) {
 		if(existsRoom(roomName)) {
 			return "Room with name " + roomName + " already exists";
 		}
 		if(existsDevice(deviceName)) {
 			return "Device with name " + deviceName + " already exists";
 		}
+		HalSystem halSystem = HalApplication.getHalSystem();
+		Device device = null;
+		if(type.equals("sensor")) {
+			device = HalFactory.eINSTANCE.createSensor();
+		}
+		else {
+			device = HalFactory.eINSTANCE.createActuator();
+		}
+		device.setName(deviceName);
+		Room room = findRoom(roomName);
+		room.getDevice().add(device);
+		halSystem.getDevice().add(device);
+		HalApplication.save();
 		return null;
 	}
 	
@@ -72,10 +85,13 @@ public class HalController {
 		return null;
 	}
 	
-	private static Object findDevice(String deviceName) {
+	private static Device findDevice(String deviceName) {
 		HalSystem halSystem = HalApplication.getHalSystem();
-		Home home = halSystem.getHome();
-		//home.get
+		for(Device d : halSystem.getDevice()) {
+			if(d.getName().equals(deviceName)) {
+				return d;
+			}
+		}
 		return null;
 	}
 	

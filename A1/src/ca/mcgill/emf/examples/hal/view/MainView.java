@@ -81,6 +81,9 @@ public class MainView extends JFrame {
 			toRoom = null;
 			lblRoom.setText("");
 			roomTextField.setText("");
+		} else {
+			lblRoom.setText(toRoom.getName());
+			roomTextField.setText(toRoom.getName());
 		}
 		error = null;
 	}
@@ -185,7 +188,7 @@ public class MainView extends JFrame {
 		JButton btnAdd_1 = new JButton("Add on");
 		btnAdd_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText());
+				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), "sensor");
 				refreshUI(roomTextField.getText());
 			}
 		});
