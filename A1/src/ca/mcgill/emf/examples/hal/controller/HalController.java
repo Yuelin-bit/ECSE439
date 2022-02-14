@@ -42,6 +42,27 @@ public class HalController {
 		return null;
 	}
 	
+	// update the name of a room
+	
+	public static String updateRoomName(String oldRoomName, String newRoomName) {
+		if (!existsRoom(oldRoomName)) {
+			return "Group with name " + oldRoomName + " does not exist";
+		}
+		if (oldRoomName.equals(newRoomName)) {
+			return null;
+		}
+		if (isStringValid(newRoomName)) {
+			return " Room name must be specified";
+		}
+		if (existsRoom(newRoomName)) {
+			return "Room with name " + newRoomName + " already exists";
+		}
+		Room r = findRoom(oldRoomName);
+		r.setName(newRoomName);
+		HalApplication.save();
+		return null;
+	}
+	
 	private static boolean existsDevice(String deviceName) {
 		return findDevice(deviceName) != null;
 	}
@@ -81,6 +102,10 @@ public class HalController {
 			}
 		}
 		return null;
+	}
+	
+	private static boolean isStringValid( String s) {
+		return s == null || s.length() == 0;
 	}
 	
 	private static Device findDevice(String deviceName) {
