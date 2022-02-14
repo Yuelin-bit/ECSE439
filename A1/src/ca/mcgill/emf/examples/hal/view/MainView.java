@@ -65,6 +65,8 @@ public class MainView extends JFrame {
 	private JButton btnRemove;
 	private JRadioButton rdbtnSensor;
 	private JRadioButton rdbtnActuator;
+	private JComboBox sensorCombo;
+	private JComboBox actuatorCombo;
 	
 
 	/**
@@ -186,8 +188,8 @@ public class MainView extends JFrame {
 		JLabel lblRoomName = new JLabel("Room Name: ");
 		lblRoomName.setBounds(16, 83, 90, 20);
 		
-		lblRoom = new JLabel("Room1");
-		lblRoom.setBounds(131, 83, 61, 20);
+		lblRoom = new JLabel("");
+		lblRoom.setBounds(118, 83, 102, 20);
 		contentPane.setLayout(null);
 		contentPane.add(btnShow);
 		contentPane.add(btnDelete);
@@ -272,19 +274,27 @@ public class MainView extends JFrame {
 		actuatorTable = new JTable();
 		scrollPaneActuator.setViewportView(actuatorTable);
 		
-		JLabel lblDeviceType = new JLabel("Type:");
-		lblDeviceType.setBounds(16, 310, 61, 16);
-		contentPane.add(lblDeviceType);
-		
 		rdbtnSensor = new JRadioButton("Sensor");
+		rdbtnSensor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sensorCombo.setEnabled(true);
+				actuatorCombo.setEnabled(false);
+			}
+		});
 		rdbtnSensor.setSelected(true);
 		buttonGroup.add(rdbtnSensor);
-		rdbtnSensor.setBounds(70, 306, 102, 23);
+		rdbtnSensor.setBounds(16, 307, 102, 23);
 		contentPane.add(rdbtnSensor);
 		
 		rdbtnActuator = new JRadioButton("Actuator");
+		rdbtnActuator.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sensorCombo.setEnabled(false);
+				actuatorCombo.setEnabled(true);
+			}
+		});
 		buttonGroup.add(rdbtnActuator);
-		rdbtnActuator.setBounds(190, 307, 102, 23);
+		rdbtnActuator.setBounds(266, 307, 93, 23);
 		contentPane.add(rdbtnActuator);
 		
 		btnRemove = new JButton("Remove");
@@ -308,6 +318,15 @@ public class MainView extends JFrame {
 		});
 		btnRemove.setBounds(421, 333, 93, 29);
 		contentPane.add(btnRemove);
+		
+		sensorCombo = new JComboBox();
+		sensorCombo.setBounds(97, 307, 157, 27);
+		contentPane.add(sensorCombo);
+		
+		actuatorCombo = new JComboBox();
+		actuatorCombo.setEnabled(false);
+		actuatorCombo.setBounds(351, 307, 163, 27);
+		contentPane.add(actuatorCombo);
 		
 		refreshUI(null);
 	}
