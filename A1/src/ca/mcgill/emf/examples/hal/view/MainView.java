@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.Color;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class MainView extends JFrame {
 
@@ -39,6 +40,10 @@ public class MainView extends JFrame {
 	private String error = null;
 	private JLabel lblRoom;
 	private JTextField deviceTextField;
+	private JTable deviceTable;
+	private JScrollPane scrollPane;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -176,9 +181,12 @@ public class MainView extends JFrame {
 		lblNewLabel_1.setBounds(16, 147, 428, 16);
 		contentPane.add(lblNewLabel_1);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane(deviceTable);
 		scrollPane.setBounds(16, 175, 471, 105);
 		contentPane.add(scrollPane);
+		
+		deviceTable = new JTable();
+		scrollPane.setViewportView(deviceTable);
 		
 		deviceTextField = new JTextField();
 		deviceTextField.setBounds(116, 287, 198, 26);
