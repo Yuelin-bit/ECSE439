@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.HalSystem#getRules <em>Rules</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.HalSystem#getHome <em>Home</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.HalSystem#getDevice <em>Device</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getHalSystem()
@@ -57,5 +58,17 @@ public interface HalSystem extends EObject {
 	 * @generated
 	 */
 	void setHome(Home value);
+
+	/**
+	 * Returns the value of the '<em><b>Device</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.Device}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getHalSystem_Device()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Device> getDevice();
 
 } // HalSystem

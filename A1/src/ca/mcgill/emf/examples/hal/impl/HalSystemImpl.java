@@ -2,6 +2,7 @@
  */
 package ca.mcgill.emf.examples.hal.impl;
 
+import ca.mcgill.emf.examples.hal.Device;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.HalSystem;
 import ca.mcgill.emf.examples.hal.Home;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl#getHome <em>Home</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.HalSystemImpl#getDevice <em>Device</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +59,16 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 	 * @ordered
 	 */
 	protected Home home;
+
+	/**
+	 * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDevice()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Device> device;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,6 +149,18 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Device> getDevice() {
+		if (device == null) {
+			device = new EObjectContainmentEList<Device>(Device.class, this, HalPackage.HAL_SYSTEM__DEVICE);
+		}
+		return device;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -144,6 +168,8 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
 			case HalPackage.HAL_SYSTEM__HOME:
 				return basicSetHome(null, msgs);
+			case HalPackage.HAL_SYSTEM__DEVICE:
+				return ((InternalEList<?>)getDevice()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -160,6 +186,8 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 				return getRules();
 			case HalPackage.HAL_SYSTEM__HOME:
 				return getHome();
+			case HalPackage.HAL_SYSTEM__DEVICE:
+				return getDevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,6 +208,10 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 			case HalPackage.HAL_SYSTEM__HOME:
 				setHome((Home)newValue);
 				return;
+			case HalPackage.HAL_SYSTEM__DEVICE:
+				getDevice().clear();
+				getDevice().addAll((Collection<? extends Device>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -198,6 +230,9 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 			case HalPackage.HAL_SYSTEM__HOME:
 				setHome((Home)null);
 				return;
+			case HalPackage.HAL_SYSTEM__DEVICE:
+				getDevice().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -214,6 +249,8 @@ public class HalSystemImpl extends MinimalEObjectImpl.Container implements HalSy
 				return rules != null && !rules.isEmpty();
 			case HalPackage.HAL_SYSTEM__HOME:
 				return home != null;
+			case HalPackage.HAL_SYSTEM__DEVICE:
+				return device != null && !device.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

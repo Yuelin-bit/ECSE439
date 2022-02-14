@@ -32,12 +32,13 @@ public class MainView extends JFrame {
 	private JButton btnDelete;
 	private JButton btnClear;
 	private JTextField roomTextField;
-	private JTextField textField;
 	private JComboBox<String> roomList;
 	
 	//error
 	private JLabel errorLabel = new JLabel();
 	private String error = null;
+	private JLabel lblRoom;
+	private JTextField deviceTextField;
 
 	/**
 	 * Launch the application.
@@ -75,6 +76,13 @@ public class MainView extends JFrame {
 		roomList.setSelectedIndex(foundIndex);
 		btnShow.setEnabled(index > 0);
 		btnDelete.setEnabled(index > 0);
+		
+		if(foundIndex == -1) {
+			toRoom = null;
+			lblRoom.setText("");
+			roomTextField.setText("");
+		}
+		error = null;
 	}
 	
 	/**
@@ -127,7 +135,7 @@ public class MainView extends JFrame {
 		JLabel lblRoomName = new JLabel("Room Name: ");
 		lblRoomName.setBounds(16, 83, 90, 20);
 		
-		JLabel lblRoom = new JLabel("Room1");
+		lblRoom = new JLabel("Room1");
 		lblRoom.setBounds(131, 83, 61, 20);
 		contentPane.setLayout(null);
 		contentPane.add(btnShow);
@@ -169,12 +177,18 @@ public class MainView extends JFrame {
 		scrollPane.setBounds(16, 175, 471, 105);
 		contentPane.add(scrollPane);
 		
-		textField = new JTextField();
-		textField.setBounds(116, 287, 198, 26);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		deviceTextField = new JTextField();
+		deviceTextField.setBounds(116, 287, 198, 26);
+		contentPane.add(deviceTextField);
+		deviceTextField.setColumns(10);
 		
-		JButton btnAdd_1 = new JButton("Add");
+		JButton btnAdd_1 = new JButton("Add on");
+		btnAdd_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText());
+				refreshUI(roomTextField.getText());
+			}
+		});
 		btnAdd_1.setBounds(342, 287, 117, 29);
 		contentPane.add(btnAdd_1);
 		

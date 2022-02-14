@@ -280,13 +280,22 @@ public interface HalPackage extends EPackage {
 	int HAL_SYSTEM__HOME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Device</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAL_SYSTEM__DEVICE = 2;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAL_SYSTEM_FEATURE_COUNT = 2;
+	int HAL_SYSTEM_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.RulesImpl <em>Rules</em>}' class.
@@ -521,6 +530,17 @@ public interface HalPackage extends EPackage {
 	EReference getHalSystem_Home();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.HalSystem#getDevice <em>Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Device</em>'.
+	 * @see ca.mcgill.emf.examples.hal.HalSystem#getDevice()
+	 * @see #getHalSystem()
+	 * @generated
+	 */
+	EReference getHalSystem_Device();
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Rules <em>Rules</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,6 +750,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HAL_SYSTEM__HOME = eINSTANCE.getHalSystem_Home();
+
+		/**
+		 * The meta object literal for the '<em><b>Device</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAL_SYSTEM__DEVICE = eINSTANCE.getHalSystem_Device();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.RulesImpl <em>Rules</em>}' class.

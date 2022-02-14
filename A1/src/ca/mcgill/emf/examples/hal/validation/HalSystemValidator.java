@@ -4,6 +4,7 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.Device;
 import ca.mcgill.emf.examples.hal.Home;
 import ca.mcgill.emf.examples.hal.Rules;
 
@@ -20,6 +21,8 @@ public interface HalSystemValidator {
 
 	boolean validateRules(EList<Rules> value);
 	boolean validateHome(Home value);
+
+	boolean validateDevice(EList<Device> value);
 
 	boolean validateHome(EList<Home> value);
 }

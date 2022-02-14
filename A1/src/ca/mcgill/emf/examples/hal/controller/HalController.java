@@ -21,6 +21,20 @@ public class HalController {
 		return null;
 	}
 	
+	public static String addDevice(String roomName, String deviceName) {
+		if(existsRoom(roomName)) {
+			return "Room with name " + roomName + " already exists";
+		}
+		if(existsDevice(deviceName)) {
+			return "Device with name " + deviceName + " already exists";
+		}
+		return null;
+	}
+	
+	private static boolean existsDevice(String deviceName) {
+		return findDevice(deviceName) != null;
+	}
+
 	private static boolean existsRoom(String name) {
 		return findRoom(name) != null;
 	}
@@ -58,6 +72,13 @@ public class HalController {
 		return null;
 	}
 	
+	private static Object findDevice(String deviceName) {
+		HalSystem halSystem = HalApplication.getHalSystem();
+		Home home = halSystem.getHome();
+		//home.get
+		return null;
+	}
+	
 	public static List<String> getRooms(){
 		ArrayList<String> result = new ArrayList<String>();
 		HalSystem halSystem = HalApplication.getHalSystem();
@@ -67,4 +88,6 @@ public class HalController {
 		}
 		return result;
 	}
+
+
 }

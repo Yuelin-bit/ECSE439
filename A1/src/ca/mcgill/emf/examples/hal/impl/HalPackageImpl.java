@@ -311,6 +311,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getHalSystem_Device() {
+		return (EReference)halSystemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRules() {
 		return rulesEClass;
 	}
@@ -392,6 +401,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		halSystemEClass = createEClass(HAL_SYSTEM);
 		createEReference(halSystemEClass, HAL_SYSTEM__RULES);
 		createEReference(halSystemEClass, HAL_SYSTEM__HOME);
+		createEReference(halSystemEClass, HAL_SYSTEM__DEVICE);
 
 		rulesEClass = createEClass(RULES);
 		createEAttribute(rulesEClass, RULES__NAME);
@@ -455,6 +465,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEClass(halSystemEClass, HalSystem.class, "HalSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHalSystem_Rules(), this.getRules(), null, "rules", null, 0, -1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHalSystem_Home(), this.getHome(), null, "home", null, 0, 1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHalSystem_Device(), this.getDevice(), null, "device", null, 0, -1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRules_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
