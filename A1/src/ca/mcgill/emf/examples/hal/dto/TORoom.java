@@ -10,6 +10,11 @@ public class TORoom {
 	}
 
 
+	public List<String> getDeviceNames() {
+		return deviceNames;
+	}
+
+
 	List<String> deviceNames;
 	
 	public TORoom() {

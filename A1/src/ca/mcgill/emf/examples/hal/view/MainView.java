@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.controller.HalController;
@@ -23,6 +24,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -43,6 +46,13 @@ public class MainView extends JFrame {
 	private JTable deviceTable;
 	private JScrollPane scrollPane;
 	
+	//table
+	private DefaultTableModel deviceDtm;
+	private String deviceColumnNames[] = {"Device"};
+	private static final int HEIGHT_TEAMS_TABLE = 100;
+	private JButton btnAdd;
+	private JButton btnUpdate;
+	private JButton btnAddDevice;
 	
 
 	/**
@@ -86,10 +96,31 @@ public class MainView extends JFrame {
 			toRoom = null;
 			lblRoom.setText("");
 			roomTextField.setText("");
+			
+			populateDeviceTable(null);
+			deviceTextField.setText("");
+			
+			btnClear.setEnabled(false);
+			btnAdd.setEnabled(true);
+			btnUpdate.setEnabled(false);
+			deviceTextField.setEnabled(false);
+			btnAddDevice.setEnabled(false);
 		} else {
 			lblRoom.setText(toRoom.getName());
 			roomTextField.setText(toRoom.getName());
+			
+			populateDeviceTable(toRoom);
+			deviceTextField.setText("");
+			
+			btnClear.setEnabled(true);
+			btnAdd.setEnabled(false);
+			btnUpdate.setEnabled(true);
+			deviceTextField.setEnabled(true);
+			btnAddDevice.setEnabled(true);
+			
 		}
+		Dimension d = deviceTable.getPreferredSize();
+		scrollPane.setPreferredSize(new Dimension(d.width, HEIGHT_TEAMS_TABLE));
 		error = null;
 	}
 	
@@ -167,7 +198,7 @@ public class MainView extends JFrame {
 		contentPane.add(roomTextField);
 		roomTextField.setColumns(10);
 		
-		JButton btnAdd = new JButton("Add");
+		btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				error = HalController.addRoom(roomTextField.getText());
@@ -193,17 +224,17 @@ public class MainView extends JFrame {
 		contentPane.add(deviceTextField);
 		deviceTextField.setColumns(10);
 		
-		JButton btnAdd_1 = new JButton("Add on");
-		btnAdd_1.addActionListener(new ActionListener() {
+		btnAddDevice = new JButton("Add on");
+		btnAddDevice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), "sensor");
 				refreshUI(roomTextField.getText());
 			}
 		});
-		btnAdd_1.setBounds(342, 287, 117, 29);
-		contentPane.add(btnAdd_1);
+		btnAddDevice.setBounds(342, 287, 117, 29);
+		contentPane.add(btnAddDevice);
 		
-		JButton btnUpdate = new JButton("Update");
+		btnUpdate = new JButton("Update");
 		btnUpdate.setBounds(367, 112, 117, 29);
 		contentPane.add(btnUpdate);
 		
@@ -215,5 +246,17 @@ public class MainView extends JFrame {
 		errorLabel.setForeground(Color.RED);
 		errorLabel.setBounds(6, 6, 341, 16);
 		contentPane.add(errorLabel);
+	}
+	
+	private void populateDeviceTable(TORoom toRoom) {
+		deviceDtm = new DefaultTableModel(0, 0);
+		deviceDtm.setColumnIdentifiers(deviceColumnNames);
+		deviceTable.setModel(deviceDtm);
+		if (toRoom != null) {
+			for (String deviceName : toRoom.getDeviceNames()) {
+				Object[] obj = {deviceName};
+				deviceDtm.addRow(obj);
+			}
+		}
 	}
 }

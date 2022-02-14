@@ -22,9 +22,7 @@ public class HalController {
 	}
 	
 	public static String addDevice(String roomName, String deviceName, String type) {
-		if(existsRoom(roomName)) {
-			return "Room with name " + roomName + " already exists";
-		}
+
 		if(existsDevice(deviceName)) {
 			return "Device with name " + deviceName + " already exists";
 		}
