@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <hal:HalSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://ca.mcgill/emf/examples/hal">
-  <home>
-    <rooms name="kitchen"/>
-    <rooms name="34343432" device="//@device.13 //@device.14"/>
-    <rooms name="new" device="//@device.9"/>
-    <rooms name="3232" device="//@device.10"/>
-    <rooms name="e2e2" device="//@device.11"/>
-    <rooms name="2332" device="//@device.12"/>
-  </home>
+  <home/>
   <device xsi:type="hal:Sensor" name="sensor"/>
   <device xsi:type="hal:Sensor" name="1222"/>
   <device xsi:type="hal:Sensor" name="asdaf"/>
@@ -17,10 +10,10 @@
   <device xsi:type="hal:Actuator" name="24234"/>
   <device xsi:type="hal:Actuator" name="324532"/>
   <device xsi:type="hal:Sensor" name="23432"/>
-  <device xsi:type="hal:Sensor" name="haha" room="//@home/@rooms.2"/>
-  <device xsi:type="hal:Sensor" name="1111" room="//@home/@rooms.3"/>
-  <device xsi:type="hal:Sensor" name="32323" room="//@home/@rooms.4"/>
-  <device xsi:type="hal:Sensor" name="23232" room="//@home/@rooms.5"/>
-  <device xsi:type="hal:Sensor" name="3232" room="//@home/@rooms.1"/>
-  <device xsi:type="hal:Actuator" name="wrfewf" room="//@home/@rooms.1"/>
+  <device xsi:type="hal:Sensor" name="haha"/>
+  <device xsi:type="hal:Sensor" name="1111"/>
+  <device xsi:type="hal:Sensor" name="32323"/>
+  <device xsi:type="hal:Sensor" name="23232"/>
+  <device xsi:type="hal:Sensor" name="3232"/>
+  <device xsi:type="hal:Actuator" name="wrfewf"/>
 </hal:HalSystem>

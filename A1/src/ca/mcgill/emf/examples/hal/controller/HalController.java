@@ -110,6 +110,7 @@ public class HalController {
 			Home home = halSystem.getHome();
 			home.getRooms().remove(r);
 		}
+		HalApplication.save();
 	}
 	
 	private static Room findRoom(String name) {
