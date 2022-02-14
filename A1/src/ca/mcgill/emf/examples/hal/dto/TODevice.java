@@ -1,0 +1,30 @@
+package ca.mcgill.emf.examples.hal.dto;
+
+public class TODevice {
+	
+	public TODevice(String name, String type) {
+		this.type = type;
+		this.name = name;
+	}
+
+	private String type;
+	private String name;
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+}

@@ -5,6 +5,7 @@ import java.util.List;
 
 import ca.mcgill.emf.examples.hal.*;
 import ca.mcgill.emf.examples.hal.application.HalApplication;
+import ca.mcgill.emf.examples.hal.dto.TODevice;
 import ca.mcgill.emf.examples.hal.dto.TORoom;
 
 public class HalController {
@@ -21,14 +22,14 @@ public class HalController {
 		return null;
 	}
 	
-	public static String addDevice(String roomName, String deviceName, String type) {
+	public static String addDevice(String roomName, String deviceName, Boolean isSensor) {
 
 		if(existsDevice(deviceName)) {
 			return "Device with name " + deviceName + " already exists";
 		}
 		HalSystem halSystem = HalApplication.getHalSystem();
 		Device device = null;
-		if(type.equals("sensor")) {
+		if(isSensor) {
 			device = HalFactory.eINSTANCE.createSensor();
 		}
 		else {
@@ -75,11 +76,16 @@ public class HalController {
 		TORoom result = null;
 		Room r = findRoom(name);
 		if(r != null) {
-			List<String> deviceNames = new ArrayList<String>();
+			List<TODevice> deviceList = new ArrayList<TODevice>();
 			for(Device device : r.getDevice()) {
-				deviceNames.add(device.getName());
+				//System.out.println(device.getClass().getName());
+				if(device.getClass().getName().contains("Sensor")) {
+					deviceList.add(new TODevice(device.getName(), "sensor"));
+				}else {
+					deviceList.add(new TODevice(device.getName(), "actuator"));
+				}
 			}
-			result = new TORoom(name, deviceNames);
+			result = new TORoom(name, deviceList);
 		}
 		return result;
 	}

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <hal:HalSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://ca.mcgill/emf/examples/hal">
   <home>
-    <rooms device="//@device.0" name="bedroom1"/>
+    <rooms device="//@device.5 //@device.6 //@device.7 //@device.8" name="eee"/>
+    <rooms device="//@device.9 //@device.10 //@device.11 //@device.12" name="33213"/>
   </home>
   <device xsi:type="hal:Sensor" name="sensor"/>
+  <device xsi:type="hal:Sensor" name="1222"/>
+  <device xsi:type="hal:Sensor" name="asdaf"/>
+  <device xsi:type="hal:Sensor" name="232"/>
+  <device xsi:type="hal:Sensor" name="2332"/>
+  <device xsi:type="hal:Sensor" name="qwe"/>
+  <device xsi:type="hal:Sensor" name="weewe"/>
+  <device xsi:type="hal:Actuator" name="wew"/>
+  <device xsi:type="hal:Sensor" name="ewwe"/>
+  <device xsi:type="hal:Sensor" name="1221"/>
+  <device xsi:type="hal:Actuator" name="24234"/>
+  <device xsi:type="hal:Actuator" name="324532"/>
+  <device xsi:type="hal:Sensor" name="23432"/>
 </hal:HalSystem>

@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.controller.HalController;
+import ca.mcgill.emf.examples.hal.dto.TODevice;
 import ca.mcgill.emf.examples.hal.dto.TORoom;
 
 import javax.swing.JTextField;
@@ -50,14 +51,20 @@ public class MainView extends JFrame {
 	private JScrollPane scrollPaneSensor;
 	
 	//table
-	private DefaultTableModel deviceDtm;
-	private String deviceColumnNames[] = {"Device"};
+	private DefaultTableModel sensorDtm;
+	private String sensorColumnNames[] = {"Sensor"};
+	private DefaultTableModel actuatorDtm;
+	private String actuatorColumnNames[] = {"Actuator"};
 	private static final int HEIGHT_TEAMS_TABLE = 100;
+
 	private JButton btnAdd;
 	private JButton btnUpdate;
 	private JButton btnAddDevice;
 	private JTable actuatorTable;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JButton btnRemove;
+	private JRadioButton rdbtnSensor;
+	private JRadioButton rdbtnActuator;
 	
 
 	/**
@@ -232,11 +239,11 @@ public class MainView extends JFrame {
 		btnAddDevice = new JButton("Add on");
 		btnAddDevice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), "sensor");
+				error = HalController.addDevice(roomTextField.getText(), deviceTextField.getText(), rdbtnSensor.isSelected());
 				refreshUI(roomTextField.getText());
 			}
 		});
-		btnAddDevice.setBounds(315, 333, 117, 29);
+		btnAddDevice.setBounds(315, 333, 102, 29);
 		contentPane.add(btnAddDevice);
 		
 		btnUpdate = new JButton("Update");
@@ -269,27 +276,39 @@ public class MainView extends JFrame {
 		lblDeviceType.setBounds(16, 310, 61, 16);
 		contentPane.add(lblDeviceType);
 		
-		JRadioButton rdbtnSensor = new JRadioButton("Sensor");
+		rdbtnSensor = new JRadioButton("Sensor");
+		rdbtnSensor.setSelected(true);
 		buttonGroup.add(rdbtnSensor);
 		rdbtnSensor.setBounds(70, 306, 102, 23);
 		contentPane.add(rdbtnSensor);
 		
-		JRadioButton rdbtnActuator = new JRadioButton("Actuator");
+		rdbtnActuator = new JRadioButton("Actuator");
 		buttonGroup.add(rdbtnActuator);
 		rdbtnActuator.setBounds(190, 307, 102, 23);
 		contentPane.add(rdbtnActuator);
+		
+		btnRemove = new JButton("Remove");
+		btnRemove.setBounds(421, 333, 93, 29);
+		contentPane.add(btnRemove);
 		
 		refreshUI(null);
 	}
 	
 	private void populateDeviceTable(TORoom toRoom) {
-		deviceDtm = new DefaultTableModel(0, 0);
-		deviceDtm.setColumnIdentifiers(deviceColumnNames);
-		sensorTable.setModel(deviceDtm);
+		sensorDtm = new DefaultTableModel(0, 0);
+		sensorDtm.setColumnIdentifiers(sensorColumnNames);
+		sensorTable.setModel(sensorDtm);
+		actuatorDtm = new DefaultTableModel(0, 0);
+		actuatorDtm.setColumnIdentifiers(actuatorColumnNames);
+		actuatorTable.setModel(actuatorDtm);
 		if (toRoom != null) {
-			for (String deviceName : toRoom.getDeviceNames()) {
-				Object[] obj = {deviceName};
-				deviceDtm.addRow(obj);
+			for (TODevice device : toRoom.getDeviceList()) {
+				Object[] obj = {device.getName()};
+				if(device.getType().equals("sensor") || device.getType().equals("Sensor")) {
+					sensorDtm.addRow(obj);
+				} else {
+					actuatorDtm.addRow(obj);
+				}
 			}
 		}
 	}
