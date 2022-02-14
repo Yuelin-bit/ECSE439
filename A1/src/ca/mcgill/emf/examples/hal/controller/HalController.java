@@ -14,6 +14,9 @@ public class HalController {
 		if(existsRoom(name)) {
 			return "Room with name " + name + " already exists";
 		}
+		if(name == null || name.replaceAll(" ", "").equals("")) {
+			return "Room name cannot be null";
+		}
 		HalSystem halSystem = HalApplication.getHalSystem();
 		Room room = HalFactory.eINSTANCE.createRoom();
 		room.setName(name);
@@ -23,7 +26,9 @@ public class HalController {
 	}
 	
 	public static String addDevice(String roomName, String deviceName, String specificType, Boolean isSensor) {
-
+		if(deviceName == null || deviceName.equals("")) {
+			return "Device name cannot be empty.";
+		}
 		if(existsDevice(deviceName)) {
 			return "Device with name " + deviceName + " already exists";
 		}
@@ -32,13 +37,13 @@ public class HalController {
 		if(isSensor) {
 			device = HalFactory.eINSTANCE.createSensor();
 			Sensor s = (Sensor) device;
-			System.out.println("specificType in if is " + specificType);
+			//System.out.println("specificType in if is " + specificType);
 			s.setSensorType(SensorType.get(specificType.replaceAll(" ", "")));
 		}
 		else {
 			device = HalFactory.eINSTANCE.createActuator();
 			Actuator a = (Actuator) device;
-			System.out.println("specificType in else is " + specificType);
+			//System.out.println("specificType in else is " + specificType);
 			a.setActuatorType(ActuatorType.getByName(specificType.replaceAll(" ", "")));
 		}
 		device.setName(deviceName);
