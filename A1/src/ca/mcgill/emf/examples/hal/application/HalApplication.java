@@ -2,7 +2,9 @@ package ca.mcgill.emf.examples.hal.application;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
+
 import ca.mcgill.emf.examples.hal.*;
+import ca.mcgill.emf.examples.hal.util.HalResourceFactoryImpl;
 import ca.mcgill.emf.examples.hal.util.ResourceHelper;
 import ca.mcgill.emf.examples.hal.view.MainView;
 
@@ -19,6 +21,8 @@ public class HalApplication {
 	 */
 	public static void main(String[] args) {
 		// start UI
+		HalPackage.eINSTANCE.eClass();
+		ResourceHelper.INSTANCE.addResourceFactory("halSystem", new HalResourceFactoryImpl());
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainView().setVisible(true);
