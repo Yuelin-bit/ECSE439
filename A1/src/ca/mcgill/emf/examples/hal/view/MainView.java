@@ -68,7 +68,7 @@ public class MainView extends JFrame {
 	private JRadioButton rdbtnActuator;
 	private JComboBox<String> sensorCombo;
 	private JComboBox<String> actuatorCombo;
-	private JLabel lbloptianal;
+	private JLabel lblrequired;
 	
 
 	/**
@@ -339,10 +339,10 @@ public class MainView extends JFrame {
 		actuatorCombo.setBounds(351, 307, 163, 27);
 		contentPane.add(actuatorCombo);
 		
-		lbloptianal = new JLabel("(Optianal)");
-		lbloptianal.setForeground(Color.GRAY);
-		lbloptianal.setBounds(32, 357, 74, 16);
-		contentPane.add(lbloptianal);
+		lblrequired = new JLabel("(Required)");
+		lblrequired.setForeground(Color.GRAY);
+		lblrequired.setBounds(32, 357, 74, 16);
+		contentPane.add(lblrequired);
 		
 		sensorCombo.addItem("Temperature Sensor");
 		sensorCombo.addItem("Movement Sensor");

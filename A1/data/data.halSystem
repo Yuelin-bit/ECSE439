@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hal:HalSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://ca.mcgill/emf/examples/hal">
+  <home>
+    <rooms name="SSSSS2"/>
+    <rooms name="=" device="//@device.0 //@device.1"/>
+  </home>
+  <device xsi:type="hal:Sensor" name="dscs" room="//@home/@rooms.1" sensorType="LightSensor"/>
+  <device xsi:type="hal:Sensor" name="ccc" room="//@home/@rooms.1" sensorType="MovementSensor"/>
+</hal:HalSystem>
