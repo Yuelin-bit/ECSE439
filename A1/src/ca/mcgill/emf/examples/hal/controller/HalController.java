@@ -119,7 +119,8 @@ public class HalController {
 		if (r != null) {
 			HalSystem halSystem = HalApplication.getHalSystem();
 			Home home = halSystem.getHome();
-			for(Device d : r.getDevice()) {
+			TORoom toRoom = getRoom(r.getName());
+			for(TODevice d : toRoom.getDeviceList()) {
 				removeDevice(d.getName());
 			}
 			home.getRooms().remove(r);
