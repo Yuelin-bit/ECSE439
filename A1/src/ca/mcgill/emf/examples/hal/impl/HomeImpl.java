@@ -4,6 +4,7 @@ package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.Home;
+import ca.mcgill.emf.examples.hal.Log;
 import ca.mcgill.emf.examples.hal.Room;
 
 import java.util.Collection;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.HomeImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.HomeImpl#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.HomeImpl#getActivityLogs <em>Activity Logs</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 	 * @ordered
 	 */
 	protected EList<Room> rooms;
+
+	/**
+	 * The cached value of the '{@link #getActivityLogs() <em>Activity Logs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivityLogs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Log> activityLogs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +136,25 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Log> getActivityLogs() {
+		if (activityLogs == null) {
+			activityLogs = new EObjectContainmentEList<Log>(Log.class, this, HalPackage.HOME__ACTIVITY_LOGS);
+		}
+		return activityLogs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case HalPackage.HOME__ROOMS:
 				return ((InternalEList<?>)getRooms()).basicRemove(otherEnd, msgs);
+			case HalPackage.HOME__ACTIVITY_LOGS:
+				return ((InternalEList<?>)getActivityLogs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +171,8 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 				return getAddress();
 			case HalPackage.HOME__ROOMS:
 				return getRooms();
+			case HalPackage.HOME__ACTIVITY_LOGS:
+				return getActivityLogs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +193,10 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 				getRooms().clear();
 				getRooms().addAll((Collection<? extends Room>)newValue);
 				return;
+			case HalPackage.HOME__ACTIVITY_LOGS:
+				getActivityLogs().clear();
+				getActivityLogs().addAll((Collection<? extends Log>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +215,9 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 			case HalPackage.HOME__ROOMS:
 				getRooms().clear();
 				return;
+			case HalPackage.HOME__ACTIVITY_LOGS:
+				getActivityLogs().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +234,8 @@ public class HomeImpl extends MinimalEObjectImpl.Container implements Home {
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case HalPackage.HOME__ROOMS:
 				return rooms != null && !rooms.isEmpty();
+			case HalPackage.HOME__ACTIVITY_LOGS:
+				return activityLogs != null && !activityLogs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

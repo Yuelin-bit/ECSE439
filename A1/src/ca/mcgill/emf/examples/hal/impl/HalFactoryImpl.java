@@ -63,6 +63,9 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 			case HalPackage.SENSOR: return createSensor();
 			case HalPackage.HAL_SYSTEM: return createHalSystem();
 			case HalPackage.RULES: return createRules();
+			case HalPackage.LOG: return createLog();
+			case HalPackage.PRE_CONDITION: return createPreCondition();
+			case HalPackage.ACTION: return createAction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -160,6 +163,36 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	public Rules createRules() {
 		RulesImpl rules = new RulesImpl();
 		return rules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Log createLog() {
+		LogImpl log = new LogImpl();
+		return log;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PreCondition createPreCondition() {
+		PreConditionImpl preCondition = new PreConditionImpl();
+		return preCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
 	}
 
 	/**

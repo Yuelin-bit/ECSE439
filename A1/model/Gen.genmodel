@@ -20,6 +20,7 @@
     <genClasses ecoreClass="Hal.ecore#//Home">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Home/address"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Home/rooms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Home/activityLogs"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Actuator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Actuator/actuatorType"/>
@@ -43,7 +44,27 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//HalSystem/device"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Rules">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Rules/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Rules/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Rules/password"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Rules/precondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Rules/action"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//Log">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Log/Date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Log/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Log/endTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Log/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Log/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//PreCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//PreCondition/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//PreCondition/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//PreCondition/sensor"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Action/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Action/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Action/actuator"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

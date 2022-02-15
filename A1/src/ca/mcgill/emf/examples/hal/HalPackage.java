@@ -85,13 +85,22 @@ public interface HalPackage extends EPackage {
 	int HOME__ROOMS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Activity Logs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOME__ACTIVITY_LOGS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Home</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOME_FEATURE_COUNT = 2;
+	int HOME_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.DeviceImpl <em>Device</em>}' class.
@@ -335,13 +344,40 @@ public interface HalPackage extends EPackage {
 	int RULES = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULES__NAME = 0;
+	int RULES__TITLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULES__PASSWORD = 1;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULES__PRECONDITION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULES__ACTION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Rules</em>' class.
@@ -350,8 +386,164 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULES_FEATURE_COUNT = 1;
+	int RULES_FEATURE_COUNT = 4;
 
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.LogImpl <em>Log</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.LogImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLog()
+	 * @generated
+	 */
+	int LOG = 7;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__DATE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Start Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__START_TIME = 1;
+
+	/**
+	 * The feature id for the '<em><b>End Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__END_TIME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__CONTENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Rules</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__RULES = 4;
+
+	/**
+	 * The number of structural features of the '<em>Log</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl <em>Pre Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.PreConditionImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getPreCondition()
+	 * @generated
+	 */
+	int PRE_CONDITION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_CONDITION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_CONDITION__CONTENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_CONDITION__SENSOR = 2;
+
+	/**
+	 * The number of structural features of the '<em>Pre Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_CONDITION_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.ActionImpl <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.ActionImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__CONTENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Actuator</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ACTUATOR = 2;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.
@@ -361,7 +553,7 @@ public interface HalPackage extends EPackage {
 	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSensorType()
 	 * @generated
 	 */
-	int SENSOR_TYPE = 7;
+	int SENSOR_TYPE = 10;
 
 
 	/**
@@ -372,7 +564,7 @@ public interface HalPackage extends EPackage {
 	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorType()
 	 * @generated
 	 */
-	int ACTUATOR_TYPE = 8;
+	int ACTUATOR_TYPE = 11;
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
@@ -405,6 +597,17 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHome_Rooms();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.Home#getActivityLogs <em>Activity Logs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Activity Logs</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Home#getActivityLogs()
+	 * @see #getHome()
+	 * @generated
+	 */
+	EReference getHome_ActivityLogs();
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Actuator <em>Actuator</em>}'.
@@ -588,15 +791,199 @@ public interface HalPackage extends EPackage {
 	EClass getRules();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Rules#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Rules#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ca.mcgill.emf.examples.hal.Rules#getName()
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules#getTitle()
 	 * @see #getRules()
 	 * @generated
 	 */
-	EAttribute getRules_Name();
+	EAttribute getRules_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Rules#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules#getPassword()
+	 * @see #getRules()
+	 * @generated
+	 */
+	EAttribute getRules_Password();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.Rules#getPrecondition <em>Precondition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Precondition</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules#getPrecondition()
+	 * @see #getRules()
+	 * @generated
+	 */
+	EReference getRules_Precondition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.Rules#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Rules#getAction()
+	 * @see #getRules()
+	 * @generated
+	 */
+	EReference getRules_Action();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Log <em>Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Log</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log
+	 * @generated
+	 */
+	EClass getLog();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Log#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log#getDate()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EAttribute getLog_Date();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Log#getStartTime <em>Start Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Time</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log#getStartTime()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EAttribute getLog_StartTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Log#getEndTime <em>End Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End Time</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log#getEndTime()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EAttribute getLog_EndTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Log#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log#getContent()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EAttribute getLog_Content();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.Log#getRules <em>Rules</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Rules</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Log#getRules()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EReference getLog_Rules();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.PreCondition <em>Pre Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pre Condition</em>'.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition
+	 * @generated
+	 */
+	EClass getPreCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.PreCondition#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition#getId()
+	 * @see #getPreCondition()
+	 * @generated
+	 */
+	EAttribute getPreCondition_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.PreCondition#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition#getContent()
+	 * @see #getPreCondition()
+	 * @generated
+	 */
+	EAttribute getPreCondition_Content();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.PreCondition#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sensor</em>'.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition#getSensor()
+	 * @see #getPreCondition()
+	 * @generated
+	 */
+	EReference getPreCondition_Sensor();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Action
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Action#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Action#getId()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.Action#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Action#getContent()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Content();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.Action#getActuator <em>Actuator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Actuator</em>'.
+	 * @see ca.mcgill.emf.examples.hal.Action#getActuator()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Actuator();
 
 	/**
 	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}'.
@@ -665,6 +1052,14 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOME__ROOMS = eINSTANCE.getHome_Rooms();
+
+		/**
+		 * The meta object literal for the '<em><b>Activity Logs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOME__ACTIVITY_LOGS = eINSTANCE.getHome_ActivityLogs();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.ActuatorImpl <em>Actuator</em>}' class.
@@ -815,12 +1210,154 @@ public interface HalPackage extends EPackage {
 		EClass RULES = eINSTANCE.getRules();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RULES__NAME = eINSTANCE.getRules_Name();
+		EAttribute RULES__TITLE = eINSTANCE.getRules_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RULES__PASSWORD = eINSTANCE.getRules_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULES__PRECONDITION = eINSTANCE.getRules_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULES__ACTION = eINSTANCE.getRules_Action();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.LogImpl <em>Log</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.LogImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLog()
+		 * @generated
+		 */
+		EClass LOG = eINSTANCE.getLog();
+
+		/**
+		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG__DATE = eINSTANCE.getLog_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG__START_TIME = eINSTANCE.getLog_StartTime();
+
+		/**
+		 * The meta object literal for the '<em><b>End Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG__END_TIME = eINSTANCE.getLog_EndTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOG__CONTENT = eINSTANCE.getLog_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Rules</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOG__RULES = eINSTANCE.getLog_Rules();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl <em>Pre Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.PreConditionImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getPreCondition()
+		 * @generated
+		 */
+		EClass PRE_CONDITION = eINSTANCE.getPreCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRE_CONDITION__ID = eINSTANCE.getPreCondition_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRE_CONDITION__CONTENT = eINSTANCE.getPreCondition_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRE_CONDITION__SENSOR = eINSTANCE.getPreCondition_Sensor();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.ActionImpl <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.ActionImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__ID = eINSTANCE.getAction_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__CONTENT = eINSTANCE.getAction_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Actuator</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__ACTUATOR = eINSTANCE.getAction_Actuator();
 
 		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.

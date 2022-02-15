@@ -2,6 +2,7 @@
  */
 package ca.mcgill.emf.examples.hal.impl;
 
+import ca.mcgill.emf.examples.hal.Action;
 import ca.mcgill.emf.examples.hal.Actuator;
 import ca.mcgill.emf.examples.hal.ActuatorType;
 import ca.mcgill.emf.examples.hal.Device;
@@ -9,6 +10,8 @@ import ca.mcgill.emf.examples.hal.HalFactory;
 import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.HalSystem;
 import ca.mcgill.emf.examples.hal.Home;
+import ca.mcgill.emf.examples.hal.Log;
+import ca.mcgill.emf.examples.hal.PreCondition;
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.Rules;
 import ca.mcgill.emf.examples.hal.Sensor;
@@ -77,6 +80,27 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	private EClass rulesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass preConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +202,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EReference getHome_Rooms() {
 		return (EReference)homeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHome_ActivityLogs() {
+		return (EReference)homeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -338,8 +371,161 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRules_Name() {
+	public EAttribute getRules_Title() {
 		return (EAttribute)rulesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRules_Password() {
+		return (EAttribute)rulesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRules_Precondition() {
+		return (EReference)rulesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRules_Action() {
+		return (EReference)rulesEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLog() {
+		return logEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLog_Date() {
+		return (EAttribute)logEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLog_StartTime() {
+		return (EAttribute)logEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLog_EndTime() {
+		return (EAttribute)logEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLog_Content() {
+		return (EAttribute)logEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLog_Rules() {
+		return (EReference)logEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPreCondition() {
+		return preConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPreCondition_Id() {
+		return (EAttribute)preConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPreCondition_Content() {
+		return (EAttribute)preConditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPreCondition_Sensor() {
+		return (EReference)preConditionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAction() {
+		return actionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAction_Id() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAction_Content() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAction_Actuator() {
+		return (EReference)actionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -391,6 +577,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		homeEClass = createEClass(HOME);
 		createEAttribute(homeEClass, HOME__ADDRESS);
 		createEReference(homeEClass, HOME__ROOMS);
+		createEReference(homeEClass, HOME__ACTIVITY_LOGS);
 
 		actuatorEClass = createEClass(ACTUATOR);
 		createEAttribute(actuatorEClass, ACTUATOR__ACTUATOR_TYPE);
@@ -414,7 +601,27 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		createEReference(halSystemEClass, HAL_SYSTEM__DEVICE);
 
 		rulesEClass = createEClass(RULES);
-		createEAttribute(rulesEClass, RULES__NAME);
+		createEAttribute(rulesEClass, RULES__TITLE);
+		createEAttribute(rulesEClass, RULES__PASSWORD);
+		createEReference(rulesEClass, RULES__PRECONDITION);
+		createEReference(rulesEClass, RULES__ACTION);
+
+		logEClass = createEClass(LOG);
+		createEAttribute(logEClass, LOG__DATE);
+		createEAttribute(logEClass, LOG__START_TIME);
+		createEAttribute(logEClass, LOG__END_TIME);
+		createEAttribute(logEClass, LOG__CONTENT);
+		createEReference(logEClass, LOG__RULES);
+
+		preConditionEClass = createEClass(PRE_CONDITION);
+		createEAttribute(preConditionEClass, PRE_CONDITION__ID);
+		createEAttribute(preConditionEClass, PRE_CONDITION__CONTENT);
+		createEReference(preConditionEClass, PRE_CONDITION__SENSOR);
+
+		actionEClass = createEClass(ACTION);
+		createEAttribute(actionEClass, ACTION__ID);
+		createEAttribute(actionEClass, ACTION__CONTENT);
+		createEReference(actionEClass, ACTION__ACTUATOR);
 
 		// Create enums
 		sensorTypeEEnum = createEEnum(SENSOR_TYPE);
@@ -456,6 +663,7 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEClass(homeEClass, Home.class, "Home", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHome_Address(), ecorePackage.getEString(), "address", null, 0, 1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHome_Rooms(), this.getRoom(), null, "rooms", null, 1, -1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHome_ActivityLogs(), this.getLog(), null, "activityLogs", null, 0, -1, Home.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorEClass, Actuator.class, "Actuator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActuator_ActuatorType(), this.getActuatorType(), "actuatorType", null, 0, 1, Actuator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -479,7 +687,27 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEReference(getHalSystem_Device(), this.getDevice(), null, "device", null, 0, -1, HalSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRules_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRules_Title(), ecorePackage.getEString(), "title", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRules_Password(), ecorePackage.getEString(), "password", null, 0, 1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRules_Precondition(), this.getPreCondition(), null, "precondition", null, 1, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRules_Action(), this.getAction(), null, "action", null, 1, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(logEClass, Log.class, "Log", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLog_Date(), ecorePackage.getEDate(), "Date", null, 0, 1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLog_StartTime(), ecorePackage.getEString(), "startTime", null, 0, 1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLog_EndTime(), ecorePackage.getEString(), "endTime", null, 0, 1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLog_Content(), ecorePackage.getEString(), "content", null, 0, 1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLog_Rules(), this.getRules(), null, "rules", null, 0, -1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(preConditionEClass, PreCondition.class, "PreCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPreCondition_Id(), ecorePackage.getEString(), "id", null, 0, 1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPreCondition_Content(), ecorePackage.getEString(), "content", null, 0, 1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPreCondition_Sensor(), this.getSensor(), null, "sensor", null, 0, -1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction_Id(), ecorePackage.getEString(), "id", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Content(), ecorePackage.getEString(), "content", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_Actuator(), this.getActuator(), null, "actuator", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(sensorTypeEEnum, SensorType.class, "SensorType");

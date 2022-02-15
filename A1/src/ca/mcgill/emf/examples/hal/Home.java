@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.mcgill.emf.examples.hal.Home#getAddress <em>Address</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.Home#getRooms <em>Rooms</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.Home#getActivityLogs <em>Activity Logs</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getHome()
@@ -57,5 +58,17 @@ public interface Home extends EObject {
 	 * @generated
 	 */
 	EList<Room> getRooms();
+
+	/**
+	 * Returns the value of the '<em><b>Activity Logs</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.Log}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Activity Logs</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getHome_ActivityLogs()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Log> getActivityLogs();
 
 } // Home

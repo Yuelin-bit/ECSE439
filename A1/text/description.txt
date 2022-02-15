@@ -10,6 +10,7 @@ Package hal <http://ca.mcgill/emf/examples/hal>
   Class Home
     Attribute address : EString
     Reference rooms : Room<<1..*>>
+    Reference activityLogs : Log<<0..*>>
 
   Class Actuator -> Device
     Attribute actuatorType : ActuatorType
@@ -33,7 +34,27 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Reference device : Device<<0..*>>
 
   Class Rules
-    Attribute name : EString
+    Attribute title : EString
+    Attribute password : EString
+    Reference precondition : PreCondition<<1..*>>
+    Reference action : Action<<1..*>>
+
+  Class Log
+    Attribute Date : EDate
+    Attribute startTime : EString
+    Attribute endTime : EString
+    Attribute content : EString
+    Reference rules : Rules<<0..*>>
+
+  Class PreCondition
+    Attribute id : EString
+    Attribute content : EString
+    Reference sensor : Sensor<<0..*>>
+
+  Class Action
+    Attribute id : EString
+    Attribute content : EString
+    Reference actuator : Actuator<<0..*>>
 
   Enum SensorType
     Literal TemperatureSensor = 0

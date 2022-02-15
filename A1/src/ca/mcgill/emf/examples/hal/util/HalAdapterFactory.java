@@ -96,6 +96,18 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 				return createRulesAdapter();
 			}
 			@Override
+			public Adapter caseLog(Log object) {
+				return createLogAdapter();
+			}
+			@Override
+			public Adapter casePreCondition(PreCondition object) {
+				return createPreConditionAdapter();
+			}
+			@Override
+			public Adapter caseAction(Action object) {
+				return createActionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +222,48 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRulesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Log <em>Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Log
+	 * @generated
+	 */
+	public Adapter createLogAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.PreCondition <em>Pre Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition
+	 * @generated
+	 */
+	public Adapter createPreConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.Action
+	 * @generated
+	 */
+	public Adapter createActionAdapter() {
 		return null;
 	}
 

@@ -119,6 +119,9 @@ public class HalController {
 		if (r != null) {
 			HalSystem halSystem = HalApplication.getHalSystem();
 			Home home = halSystem.getHome();
+			for(Device d : r.getDevice()) {
+				removeDevice(d.getName());
+			}
 			home.getRooms().remove(r);
 		}
 		HalApplication.save();

@@ -4,6 +4,10 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.Action;
+import ca.mcgill.emf.examples.hal.PreCondition;
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * A sample validator interface for {@link ca.mcgill.emf.examples.hal.Rules}.
@@ -13,6 +17,14 @@ package ca.mcgill.emf.examples.hal.validation;
  */
 public interface RulesValidator {
 	boolean validate();
+
+	boolean validateTitle(String value);
+
+	boolean validatePassword(String value);
+
+	boolean validatePrecondition(EList<PreCondition> value);
+
+	boolean validateAction(EList<Action> value);
 
 	boolean validateName(String value);
 }
