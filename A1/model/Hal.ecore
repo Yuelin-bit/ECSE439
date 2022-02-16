@@ -63,11 +63,35 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" upperBound="-1"
         eType="#//Sensor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicpiece" upperBound="-1"
+        eType="#//LogicPiece" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actuator" upperBound="-1"
         eType="#//Actuator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicGate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//LogicType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="NOT" value="2"/>
+    <eLiterals name="ORNOT" value="3"/>
+    <eLiterals name="ANDNOT" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicPiece">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicpiece" upperBound="-1"
+        eType="#//LogicPiece"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singlecondition" upperBound="-1"
+        eType="#//SingleCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicgate" upperBound="-1"
+        eType="#//LogicGate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

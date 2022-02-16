@@ -17,6 +17,13 @@
       <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorType/Lock"/>
       <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//ActuatorType/LightSwitch"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Hal.ecore#//LogicType">
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//LogicType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//LogicType/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//LogicType/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//LogicType/ORNOT"/>
+      <genEnumLiterals ecoreEnumLiteral="Hal.ecore#//LogicType/ANDNOT"/>
+    </genEnums>
     <genClasses ecoreClass="Hal.ecore#//Home">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Home/address"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//Home/rooms"/>
@@ -60,11 +67,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//PreCondition/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//PreCondition/content"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//PreCondition/sensor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Hal.ecore#//PreCondition/logicpiece"/>
     </genClasses>
     <genClasses ecoreClass="Hal.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Action/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//Action/content"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//Action/actuator"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//SingleCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//SingleCondition/id"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//LogicGate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//LogicGate/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Hal.ecore#//LogicPiece">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//LogicPiece/logicpiece"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//LogicPiece/singlecondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Hal.ecore#//LogicPiece/logicgate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Hal.ecore#//LogicPiece/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -108,6 +108,18 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 				return createActionAdapter();
 			}
 			@Override
+			public Adapter caseSingleCondition(SingleCondition object) {
+				return createSingleConditionAdapter();
+			}
+			@Override
+			public Adapter caseLogicGate(LogicGate object) {
+				return createLogicGateAdapter();
+			}
+			@Override
+			public Adapter caseLogicPiece(LogicPiece object) {
+				return createLogicPieceAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -264,6 +276,48 @@ public class HalAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.SingleCondition <em>Single Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.SingleCondition
+	 * @generated
+	 */
+	public Adapter createSingleConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.LogicGate <em>Logic Gate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.LogicGate
+	 * @generated
+	 */
+	public Adapter createLogicGateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.mcgill.emf.examples.hal.LogicPiece <em>Logic Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece
+	 * @generated
+	 */
+	public Adapter createLogicPieceAdapter() {
 		return null;
 	}
 

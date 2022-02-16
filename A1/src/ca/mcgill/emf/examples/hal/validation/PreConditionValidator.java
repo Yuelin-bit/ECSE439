@@ -4,6 +4,7 @@
  */
 package ca.mcgill.emf.examples.hal.validation;
 
+import ca.mcgill.emf.examples.hal.LogicPiece;
 import ca.mcgill.emf.examples.hal.Sensor;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,4 +21,6 @@ public interface PreConditionValidator {
 	boolean validateId(String value);
 	boolean validateContent(String value);
 	boolean validateSensor(EList<Sensor> value);
+
+	boolean validateLogicpiece(EList<LogicPiece> value);
 }

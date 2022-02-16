@@ -103,6 +103,33 @@ public interface HalFactory extends EFactory {
 	Action createAction();
 
 	/**
+	 * Returns a new object of class '<em>Single Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Single Condition</em>'.
+	 * @generated
+	 */
+	SingleCondition createSingleCondition();
+
+	/**
+	 * Returns a new object of class '<em>Logic Gate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logic Gate</em>'.
+	 * @generated
+	 */
+	LogicGate createLogicGate();
+
+	/**
+	 * Returns a new object of class '<em>Logic Piece</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logic Piece</em>'.
+	 * @generated
+	 */
+	LogicPiece createLogicPiece();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

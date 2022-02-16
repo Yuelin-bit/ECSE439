@@ -11,12 +11,16 @@ import ca.mcgill.emf.examples.hal.HalPackage;
 import ca.mcgill.emf.examples.hal.HalSystem;
 import ca.mcgill.emf.examples.hal.Home;
 import ca.mcgill.emf.examples.hal.Log;
+import ca.mcgill.emf.examples.hal.LogicGate;
+import ca.mcgill.emf.examples.hal.LogicPiece;
+import ca.mcgill.emf.examples.hal.LogicType;
 import ca.mcgill.emf.examples.hal.PreCondition;
 import ca.mcgill.emf.examples.hal.Room;
 import ca.mcgill.emf.examples.hal.Rules;
 import ca.mcgill.emf.examples.hal.Sensor;
 
 import ca.mcgill.emf.examples.hal.SensorType;
+import ca.mcgill.emf.examples.hal.SingleCondition;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -107,6 +111,27 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass singleConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicGateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logicPieceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum sensorTypeEEnum = null;
 
 	/**
@@ -115,6 +140,13 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * @generated
 	 */
 	private EEnum actuatorTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum logicTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -497,6 +529,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPreCondition_Logicpiece() {
+		return (EReference)preConditionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -533,6 +574,87 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSingleCondition() {
+		return singleConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSingleCondition_Id() {
+		return (EAttribute)singleConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicGate() {
+		return logicGateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicGate_Type() {
+		return (EAttribute)logicGateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogicPiece() {
+		return logicPieceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicPiece_Logicpiece() {
+		return (EReference)logicPieceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicPiece_Singlecondition() {
+		return (EReference)logicPieceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogicPiece_Logicgate() {
+		return (EReference)logicPieceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLogicPiece_Id() {
+		return (EAttribute)logicPieceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSensorType() {
 		return sensorTypeEEnum;
 	}
@@ -544,6 +666,15 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 	 */
 	public EEnum getActuatorType() {
 		return actuatorTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLogicType() {
+		return logicTypeEEnum;
 	}
 
 	/**
@@ -617,15 +748,29 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		createEAttribute(preConditionEClass, PRE_CONDITION__ID);
 		createEAttribute(preConditionEClass, PRE_CONDITION__CONTENT);
 		createEReference(preConditionEClass, PRE_CONDITION__SENSOR);
+		createEReference(preConditionEClass, PRE_CONDITION__LOGICPIECE);
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__ID);
 		createEAttribute(actionEClass, ACTION__CONTENT);
 		createEReference(actionEClass, ACTION__ACTUATOR);
 
+		singleConditionEClass = createEClass(SINGLE_CONDITION);
+		createEAttribute(singleConditionEClass, SINGLE_CONDITION__ID);
+
+		logicGateEClass = createEClass(LOGIC_GATE);
+		createEAttribute(logicGateEClass, LOGIC_GATE__TYPE);
+
+		logicPieceEClass = createEClass(LOGIC_PIECE);
+		createEReference(logicPieceEClass, LOGIC_PIECE__LOGICPIECE);
+		createEReference(logicPieceEClass, LOGIC_PIECE__SINGLECONDITION);
+		createEReference(logicPieceEClass, LOGIC_PIECE__LOGICGATE);
+		createEAttribute(logicPieceEClass, LOGIC_PIECE__ID);
+
 		// Create enums
 		sensorTypeEEnum = createEEnum(SENSOR_TYPE);
 		actuatorTypeEEnum = createEEnum(ACTUATOR_TYPE);
+		logicTypeEEnum = createEEnum(LOGIC_TYPE);
 	}
 
 	/**
@@ -703,11 +848,24 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		initEAttribute(getPreCondition_Id(), ecorePackage.getEString(), "id", null, 0, 1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPreCondition_Content(), ecorePackage.getEString(), "content", null, 0, 1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPreCondition_Sensor(), this.getSensor(), null, "sensor", null, 0, -1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPreCondition_Logicpiece(), this.getLogicPiece(), null, "logicpiece", null, 0, -1, PreCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Id(), ecorePackage.getEString(), "id", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Content(), ecorePackage.getEString(), "content", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_Actuator(), this.getActuator(), null, "actuator", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singleConditionEClass, SingleCondition.class, "SingleCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSingleCondition_Id(), ecorePackage.getEString(), "id", null, 0, 1, SingleCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(logicGateEClass, LogicGate.class, "LogicGate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicGate_Type(), this.getLogicType(), "type", null, 0, 1, LogicGate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(logicPieceEClass, LogicPiece.class, "LogicPiece", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogicPiece_Logicpiece(), this.getLogicPiece(), null, "logicpiece", null, 0, -1, LogicPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogicPiece_Singlecondition(), this.getSingleCondition(), null, "singlecondition", null, 0, -1, LogicPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLogicPiece_Logicgate(), this.getLogicGate(), null, "logicgate", null, 0, -1, LogicPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLogicPiece_Id(), ecorePackage.getEString(), "id", null, 0, 1, LogicPiece.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(sensorTypeEEnum, SensorType.class, "SensorType");
@@ -719,6 +877,13 @@ public class HalPackageImpl extends EPackageImpl implements HalPackage {
 		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.HEATER);
 		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.LOCK);
 		addEEnumLiteral(actuatorTypeEEnum, ActuatorType.LIGHT_SWITCH);
+
+		initEEnum(logicTypeEEnum, LogicType.class, "LogicType");
+		addEEnumLiteral(logicTypeEEnum, LogicType.AND);
+		addEEnumLiteral(logicTypeEEnum, LogicType.OR);
+		addEEnumLiteral(logicTypeEEnum, LogicType.NOT);
+		addEEnumLiteral(logicTypeEEnum, LogicType.ORNOT);
+		addEEnumLiteral(logicTypeEEnum, LogicType.ANDNOT);
 
 		// Create resource
 		createResource(eNS_URI);

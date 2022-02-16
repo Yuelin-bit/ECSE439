@@ -66,6 +66,9 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 			case HalPackage.LOG: return createLog();
 			case HalPackage.PRE_CONDITION: return createPreCondition();
 			case HalPackage.ACTION: return createAction();
+			case HalPackage.SINGLE_CONDITION: return createSingleCondition();
+			case HalPackage.LOGIC_GATE: return createLogicGate();
+			case HalPackage.LOGIC_PIECE: return createLogicPiece();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,6 +86,8 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 				return createSensorTypeFromString(eDataType, initialValue);
 			case HalPackage.ACTUATOR_TYPE:
 				return createActuatorTypeFromString(eDataType, initialValue);
+			case HalPackage.LOGIC_TYPE:
+				return createLogicTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,6 +105,8 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 				return convertSensorTypeToString(eDataType, instanceValue);
 			case HalPackage.ACTUATOR_TYPE:
 				return convertActuatorTypeToString(eDataType, instanceValue);
+			case HalPackage.LOGIC_TYPE:
+				return convertLogicTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -200,6 +207,36 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SingleCondition createSingleCondition() {
+		SingleConditionImpl singleCondition = new SingleConditionImpl();
+		return singleCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicGate createLogicGate() {
+		LogicGateImpl logicGate = new LogicGateImpl();
+		return logicGate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicPiece createLogicPiece() {
+		LogicPieceImpl logicPiece = new LogicPieceImpl();
+		return logicPiece;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SensorType createSensorTypeFromString(EDataType eDataType, String initialValue) {
 		SensorType result = SensorType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -232,6 +269,26 @@ public class HalFactoryImpl extends EFactoryImpl implements HalFactory {
 	 * @generated
 	 */
 	public String convertActuatorTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicType createLogicTypeFromString(EDataType eDataType, String initialValue) {
+		LogicType result = LogicType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLogicTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

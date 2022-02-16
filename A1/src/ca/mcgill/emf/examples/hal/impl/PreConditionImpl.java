@@ -3,6 +3,7 @@
 package ca.mcgill.emf.examples.hal.impl;
 
 import ca.mcgill.emf.examples.hal.HalPackage;
+import ca.mcgill.emf.examples.hal.LogicPiece;
 import ca.mcgill.emf.examples.hal.PreCondition;
 import ca.mcgill.emf.examples.hal.Sensor;
 
@@ -10,14 +11,18 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl#getId <em>Id</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl#getContent <em>Content</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.impl.PreConditionImpl#getLogicpiece <em>Logicpiece</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +90,16 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @ordered
 	 */
 	protected EList<Sensor> sensor;
+
+	/**
+	 * The cached value of the '{@link #getLogicpiece() <em>Logicpiece</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogicpiece()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LogicPiece> logicpiece;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +179,32 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<LogicPiece> getLogicpiece() {
+		if (logicpiece == null) {
+			logicpiece = new EObjectContainmentEList<LogicPiece>(LogicPiece.class, this, HalPackage.PRE_CONDITION__LOGICPIECE);
+		}
+		return logicpiece;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case HalPackage.PRE_CONDITION__LOGICPIECE:
+				return ((InternalEList<?>)getLogicpiece()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -172,6 +214,8 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 				return getContent();
 			case HalPackage.PRE_CONDITION__SENSOR:
 				return getSensor();
+			case HalPackage.PRE_CONDITION__LOGICPIECE:
+				return getLogicpiece();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +239,10 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 				getSensor().clear();
 				getSensor().addAll((Collection<? extends Sensor>)newValue);
 				return;
+			case HalPackage.PRE_CONDITION__LOGICPIECE:
+				getLogicpiece().clear();
+				getLogicpiece().addAll((Collection<? extends LogicPiece>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -216,6 +264,9 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 			case HalPackage.PRE_CONDITION__SENSOR:
 				getSensor().clear();
 				return;
+			case HalPackage.PRE_CONDITION__LOGICPIECE:
+				getLogicpiece().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,6 +285,8 @@ public class PreConditionImpl extends MinimalEObjectImpl.Container implements Pr
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 			case HalPackage.PRE_CONDITION__SENSOR:
 				return sensor != null && !sensor.isEmpty();
+			case HalPackage.PRE_CONDITION__LOGICPIECE:
+				return logicpiece != null && !logicpiece.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

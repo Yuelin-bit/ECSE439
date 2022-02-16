@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ca.mcgill.emf.examples.hal.PreCondition#getId <em>Id</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.PreCondition#getContent <em>Content</em>}</li>
  *   <li>{@link ca.mcgill.emf.examples.hal.PreCondition#getSensor <em>Sensor</em>}</li>
+ *   <li>{@link ca.mcgill.emf.examples.hal.PreCondition#getLogicpiece <em>Logicpiece</em>}</li>
  * </ul>
  *
  * @see ca.mcgill.emf.examples.hal.HalPackage#getPreCondition()
@@ -80,5 +81,17 @@ public interface PreCondition extends EObject {
 	 * @generated
 	 */
 	EList<Sensor> getSensor();
+
+	/**
+	 * Returns the value of the '<em><b>Logicpiece</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.mcgill.emf.examples.hal.LogicPiece}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logicpiece</em>' containment reference list.
+	 * @see ca.mcgill.emf.examples.hal.HalPackage#getPreCondition_Logicpiece()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LogicPiece> getLogicpiece();
 
 } // PreCondition

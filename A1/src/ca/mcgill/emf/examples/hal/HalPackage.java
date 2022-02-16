@@ -491,13 +491,22 @@ public interface HalPackage extends EPackage {
 	int PRE_CONDITION__SENSOR = 2;
 
 	/**
+	 * The feature id for the '<em><b>Logicpiece</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRE_CONDITION__LOGICPIECE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Pre Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRE_CONDITION_FEATURE_COUNT = 3;
+	int PRE_CONDITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.ActionImpl <em>Action</em>}' class.
@@ -546,6 +555,117 @@ public interface HalPackage extends EPackage {
 	int ACTION_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.SingleConditionImpl <em>Single Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.SingleConditionImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSingleCondition()
+	 * @generated
+	 */
+	int SINGLE_CONDITION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_CONDITION__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Single Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_CONDITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.LogicGateImpl <em>Logic Gate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.LogicGateImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicGate()
+	 * @generated
+	 */
+	int LOGIC_GATE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_GATE__TYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Logic Gate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_GATE_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.impl.LogicPieceImpl <em>Logic Piece</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.impl.LogicPieceImpl
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicPiece()
+	 * @generated
+	 */
+	int LOGIC_PIECE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Logicpiece</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_PIECE__LOGICPIECE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Singlecondition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_PIECE__SINGLECONDITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Logicgate</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_PIECE__LOGICGATE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_PIECE__ID = 3;
+
+	/**
+	 * The number of structural features of the '<em>Logic Piece</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGIC_PIECE_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -553,7 +673,7 @@ public interface HalPackage extends EPackage {
 	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSensorType()
 	 * @generated
 	 */
-	int SENSOR_TYPE = 10;
+	int SENSOR_TYPE = 13;
 
 
 	/**
@@ -564,7 +684,17 @@ public interface HalPackage extends EPackage {
 	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getActuatorType()
 	 * @generated
 	 */
-	int ACTUATOR_TYPE = 11;
+	int ACTUATOR_TYPE = 14;
+
+	/**
+	 * The meta object id for the '{@link ca.mcgill.emf.examples.hal.LogicType <em>Logic Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.mcgill.emf.examples.hal.LogicType
+	 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicType()
+	 * @generated
+	 */
+	int LOGIC_TYPE = 15;
 
 	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Home <em>Home</em>}'.
@@ -943,6 +1073,17 @@ public interface HalPackage extends EPackage {
 	EReference getPreCondition_Sensor();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ca.mcgill.emf.examples.hal.PreCondition#getLogicpiece <em>Logicpiece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Logicpiece</em>'.
+	 * @see ca.mcgill.emf.examples.hal.PreCondition#getLogicpiece()
+	 * @see #getPreCondition()
+	 * @generated
+	 */
+	EReference getPreCondition_Logicpiece();
+
+	/**
 	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -986,6 +1127,102 @@ public interface HalPackage extends EPackage {
 	EReference getAction_Actuator();
 
 	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.SingleCondition <em>Single Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Single Condition</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SingleCondition
+	 * @generated
+	 */
+	EClass getSingleCondition();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.SingleCondition#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ca.mcgill.emf.examples.hal.SingleCondition#getId()
+	 * @see #getSingleCondition()
+	 * @generated
+	 */
+	EAttribute getSingleCondition_Id();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.LogicGate <em>Logic Gate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logic Gate</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicGate
+	 * @generated
+	 */
+	EClass getLogicGate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.LogicGate#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicGate#getType()
+	 * @see #getLogicGate()
+	 * @generated
+	 */
+	EAttribute getLogicGate_Type();
+
+	/**
+	 * Returns the meta object for class '{@link ca.mcgill.emf.examples.hal.LogicPiece <em>Logic Piece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logic Piece</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece
+	 * @generated
+	 */
+	EClass getLogicPiece();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.LogicPiece#getLogicpiece <em>Logicpiece</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Logicpiece</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece#getLogicpiece()
+	 * @see #getLogicPiece()
+	 * @generated
+	 */
+	EReference getLogicPiece_Logicpiece();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.LogicPiece#getSinglecondition <em>Singlecondition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Singlecondition</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece#getSinglecondition()
+	 * @see #getLogicPiece()
+	 * @generated
+	 */
+	EReference getLogicPiece_Singlecondition();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ca.mcgill.emf.examples.hal.LogicPiece#getLogicgate <em>Logicgate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Logicgate</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece#getLogicgate()
+	 * @see #getLogicPiece()
+	 * @generated
+	 */
+	EReference getLogicPiece_Logicgate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.mcgill.emf.examples.hal.LogicPiece#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicPiece#getId()
+	 * @see #getLogicPiece()
+	 * @generated
+	 */
+	EAttribute getLogicPiece_Id();
+
+	/**
 	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1004,6 +1241,16 @@ public interface HalPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getActuatorType();
+
+	/**
+	 * Returns the meta object for enum '{@link ca.mcgill.emf.examples.hal.LogicType <em>Logic Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Logic Type</em>'.
+	 * @see ca.mcgill.emf.examples.hal.LogicType
+	 * @generated
+	 */
+	EEnum getLogicType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1326,6 +1573,14 @@ public interface HalPackage extends EPackage {
 		EReference PRE_CONDITION__SENSOR = eINSTANCE.getPreCondition_Sensor();
 
 		/**
+		 * The meta object literal for the '<em><b>Logicpiece</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRE_CONDITION__LOGICPIECE = eINSTANCE.getPreCondition_Logicpiece();
+
+		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1360,6 +1615,84 @@ public interface HalPackage extends EPackage {
 		EReference ACTION__ACTUATOR = eINSTANCE.getAction_Actuator();
 
 		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.SingleConditionImpl <em>Single Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.SingleConditionImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getSingleCondition()
+		 * @generated
+		 */
+		EClass SINGLE_CONDITION = eINSTANCE.getSingleCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SINGLE_CONDITION__ID = eINSTANCE.getSingleCondition_Id();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.LogicGateImpl <em>Logic Gate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.LogicGateImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicGate()
+		 * @generated
+		 */
+		EClass LOGIC_GATE = eINSTANCE.getLogicGate();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIC_GATE__TYPE = eINSTANCE.getLogicGate_Type();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.impl.LogicPieceImpl <em>Logic Piece</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.impl.LogicPieceImpl
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicPiece()
+		 * @generated
+		 */
+		EClass LOGIC_PIECE = eINSTANCE.getLogicPiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Logicpiece</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGIC_PIECE__LOGICPIECE = eINSTANCE.getLogicPiece_Logicpiece();
+
+		/**
+		 * The meta object literal for the '<em><b>Singlecondition</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGIC_PIECE__SINGLECONDITION = eINSTANCE.getLogicPiece_Singlecondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Logicgate</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOGIC_PIECE__LOGICGATE = eINSTANCE.getLogicPiece_Logicgate();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGIC_PIECE__ID = eINSTANCE.getLogicPiece_Id();
+
+		/**
 		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.SensorType <em>Sensor Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1378,6 +1711,16 @@ public interface HalPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ACTUATOR_TYPE = eINSTANCE.getActuatorType();
+
+		/**
+		 * The meta object literal for the '{@link ca.mcgill.emf.examples.hal.LogicType <em>Logic Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.mcgill.emf.examples.hal.LogicType
+		 * @see ca.mcgill.emf.examples.hal.impl.HalPackageImpl#getLogicType()
+		 * @generated
+		 */
+		EEnum LOGIC_TYPE = eINSTANCE.getLogicType();
 
 	}
 

@@ -50,11 +50,24 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Attribute id : EString
     Attribute content : EString
     Reference sensor : Sensor<<0..*>>
+    Reference logicpiece : LogicPiece<<0..*>>
 
   Class Action
     Attribute id : EString
     Attribute content : EString
     Reference actuator : Actuator<<0..*>>
+
+  Class SingleCondition
+    Attribute id : EString
+
+  Class LogicGate
+    Attribute type : LogicType
+
+  Class LogicPiece
+    Reference logicpiece : LogicPiece<<0..*>>
+    Reference singlecondition : SingleCondition<<0..*>>
+    Reference logicgate : LogicGate<<0..*>>
+    Attribute id : EString
 
   Enum SensorType
     Literal TemperatureSensor = 0
@@ -65,3 +78,10 @@ Package hal <http://ca.mcgill/emf/examples/hal>
     Literal Heater = 0
     Literal Lock = 1
     Literal LightSwitch = 2
+
+  Enum LogicType
+    Literal AND = 0
+    Literal OR = 1
+    Literal NOT = 2
+    Literal ORNOT = 3
+    Literal ANDNOT = 4
